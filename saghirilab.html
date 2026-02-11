@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACBOS Lab — AI, Cognitive Systems, Blockchain & Open-Source | Dr. Ali Mohammad Saghiri</title>
+    <meta name="description" content="Virtual research laboratory directed by Dr. Ali Mohammad Saghiri at William Paterson University. Research at the intersection of AI, Cognitive Systems, Blockchain, and Open-Source Systems.">
+    <meta name="keywords" content="Ali Mohammad Saghiri, ACBOS Lab, AI, Blockchain, Cognitive Systems, Open Source, Learning Automata, William Paterson University">
+    <meta name="author" content="Ali Mohammad Saghiri">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root{--ink:#0f1419;--paper:#f8f6f1;--cream:#f0ece2;--warm:#e8e0d0;--accent:#b44a2d;--accent-deep:#8a3520;--teal:#2a6b5e;--teal-light:#3a8b7a;--slate:#4a5568;--muted:#6b7280;--light-line:#d4cfc5;--code-bg:#1e2430;--code-fg:#c5cdd9;--serif:'DM Serif Display',Georgia,serif;--sans:'Source Sans 3','Segoe UI',sans-serif;--mono:'JetBrains Mono','Consolas',monospace}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;font-size:17px}
+        body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+        .pixel-art{image-rendering:pixelated;image-rendering:-moz-crisp-edges;image-rendering:crisp-edges}
+        nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(248,246,241,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--light-line);transition:box-shadow .3s}
+        nav.scrolled{box-shadow:0 2px 20px rgba(15,20,25,0.06)}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:64px}
+        .nav-logo{font-family:var(--mono);font-size:.85rem;font-weight:500;letter-spacing:.12em;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+        .nav-logo span{color:var(--ink)}
+        .nav-links{display:flex;gap:1.8rem;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--slate);font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
+        .nav-links a:hover{color:var(--accent)}
+        .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
+        .mobile-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+        .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:64px}
+        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 30%,rgba(180,74,45,.06),transparent),radial-gradient(ellipse 60% 50% at 20% 70%,rgba(42,107,94,.05),transparent)}
+        .hero-pixel-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(var(--ink) 1px,transparent 1px),linear-gradient(90deg,var(--ink) 1px,transparent 1px);background-size:8px 8px}
+        .pixel-deco{position:absolute;opacity:.07;image-rendering:pixelated}
+        .pixel-deco-1{top:15%;right:8%;width:160px;height:160px}
+        .pixel-deco-2{bottom:20%;right:15%;width:120px;height:120px}
+        .pixel-deco-3{bottom:12%;left:5%;width:80px;height:80px}
+        .hero-content{position:relative;max-width:1200px;margin:0 auto;padding:4rem 2rem}
+        .hero-eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;animation:fadeUp .8s ease both}
+        .hero-title{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5.2rem);line-height:1.08;color:var(--ink);margin-bottom:.4em;max-width:14ch;animation:fadeUp .8s ease .15s both}
+        .hero-title em{font-style:normal;color:var(--accent)}
+        .hero-subtitle{font-size:1.15rem;line-height:1.7;color:var(--slate);max-width:600px;margin-bottom:2.5rem;font-weight:300;animation:fadeUp .8s ease .3s both}
+        .hero-meta{display:flex;gap:3rem;flex-wrap:wrap;animation:fadeUp .8s ease .45s both}
+        .hero-stat{border-left:2px solid var(--accent);padding-left:1rem}
+        .hero-stat-number{font-family:var(--serif);font-size:2rem;color:var(--ink)}
+        .hero-stat-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+        .hero-scroll-cue{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;animation:fadeUp .8s ease .6s both}
+        .scroll-line{width:1px;height:40px;background:var(--accent);animation:scrollPulse 2s ease infinite}
+        .pixel-separator{display:flex;justify-content:center;align-items:center;padding:1.5rem 0;gap:4px;overflow:hidden}
+        .pixel-separator .px{width:6px;height:6px;flex-shrink:0}
+        .px-accent{background:var(--accent)}.px-teal{background:var(--teal)}.px-ink{background:var(--ink)}.px-muted{background:var(--light-line)}.px-empty{background:transparent}
+        section{padding:5rem 2rem}.container{max-width:1200px;margin:0 auto}
+        .section-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+        .section-label .px-icon{display:inline-flex;gap:2px;align-items:flex-end}
+        .section-label .px-icon .px{width:4px;height:4px;display:inline-block}
+        .section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);margin-bottom:1.5rem;color:var(--ink)}
+        .section-intro{font-size:1.05rem;color:var(--slate);max-width:680px;line-height:1.8;margin-bottom:3rem}
+        .about-section{background:var(--cream);position:relative;overflow:hidden}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+        .about-bio p{margin-bottom:1.2rem;color:var(--slate);line-height:1.85}
+        .about-bio p:first-of-type::first-line{font-weight:600;color:var(--ink)}
+        .about-details{padding-top:.5rem}
+        .detail-block{margin-bottom:2rem}
+        .detail-block h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+        .detail-block p,.detail-block li{color:var(--slate);font-size:.95rem}
+        .detail-block ul{list-style:none}
+        .detail-block li{padding:.25rem 0;padding-left:1.2rem;position:relative}
+        .detail-block li::before{content:'■';position:absolute;left:0;color:var(--teal);font-size:.5rem;top:.55rem}
+        .research-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+        .research-card{background:white;border:1px solid var(--light-line);padding:2.2rem 2rem;transition:all .3s ease;position:relative;overflow:hidden}
+        .research-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+        .research-card:hover::before{transform:scaleX(1)}
+        .research-card:hover{box-shadow:0 8px 30px rgba(15,20,25,.06);transform:translateY(-2px)}
+        .research-card-icon{display:block;margin-bottom:1rem;image-rendering:pixelated}
+        .research-card h3{font-family:var(--serif);font-size:1.25rem;margin-bottom:.8rem;color:var(--ink)}
+        .research-card p{font-size:.92rem;color:var(--muted);line-height:1.7}
+        .pub-section{background:var(--cream)}
+        .pub-tabs{display:flex;gap:0;border-bottom:2px solid var(--light-line);margin-bottom:2.5rem;flex-wrap:wrap}
+        .pub-tab{padding:.8rem 1.5rem;font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:pointer;position:relative;transition:color .2s}
+        .pub-tab::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .3s ease}
+        .pub-tab:hover{color:var(--ink)}.pub-tab.active{color:var(--accent)}.pub-tab.active::after{transform:scaleX(1)}
+        .pub-panel{display:none}.pub-panel.active{display:block}
+        .pub-item{padding:1.3rem 0;border-bottom:1px solid var(--light-line)}.pub-item:last-child{border-bottom:none}
+        .pub-year{font-family:var(--mono);font-size:.7rem;color:var(--teal);letter-spacing:.1em;margin-bottom:.2rem}
+        .pub-title{font-size:.98rem;font-weight:600;color:var(--ink);margin-bottom:.25rem;line-height:1.5}
+        .pub-authors{font-size:.85rem;color:var(--muted);margin-bottom:.15rem}
+        .pub-venue{font-size:.83rem;font-style:italic;color:var(--slate)}
+        .pub-tag{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:.12rem .5rem;border:1px solid var(--light-line);color:var(--muted);margin-top:.3rem;letter-spacing:.05em}
+        .pub-count{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-left:.4rem;font-weight:400}
+        .teaching-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+        .teaching-card{background:white;border:1px solid var(--light-line);padding:1.5rem}
+        .teaching-card h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+        .teaching-card ul{list-style:none}
+        .teaching-card li{padding:.2rem 0;padding-left:1rem;position:relative;font-size:.88rem;color:var(--slate)}
+        .teaching-card li::before{content:'▸';position:absolute;left:0;color:var(--teal);font-size:.7rem;top:.3rem}
+        .lab-section{position:relative;overflow:hidden}
+        .lab-intro{max-width:720px;margin-bottom:3.5rem}
+        .lab-intro p{color:var(--slate);line-height:1.85;margin-bottom:1rem}
+        .lab-tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:3.5rem}
+        .lab-track{background:white;border:1px solid var(--light-line);padding:2rem;position:relative}
+        .lab-track-number{font-family:var(--mono);font-size:3rem;color:rgba(180,74,45,.08);position:absolute;top:.8rem;right:1.2rem;font-weight:500}
+        .lab-track h3{font-family:var(--serif);font-size:1.15rem;margin-bottom:.6rem;color:var(--ink)}
+        .lab-track p{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+        .lab-track-skills{display:flex;flex-wrap:wrap;gap:.4rem}
+        .lab-track-skills span{font-family:var(--mono);font-size:.63rem;padding:.2rem .5rem;background:var(--cream);color:var(--slate);letter-spacing:.04em}
+        .lab-how{background:var(--code-bg);color:var(--code-fg);padding:3rem;max-width:760px}
+        .lab-how h3{font-family:var(--serif);font-size:1.4rem;color:white;margin-bottom:1.5rem}
+        .lab-how-steps{list-style:none;counter-reset:steps}
+        .lab-how-steps li{counter-increment:steps;padding:.7rem 0;padding-left:2.5rem;position:relative;font-size:.95rem;line-height:1.7;border-bottom:1px solid rgba(255,255,255,.06)}
+        .lab-how-steps li:last-child{border-bottom:none}
+        .lab-how-steps li::before{content:counter(steps,decimal-leading-zero);font-family:var(--mono);font-size:.75rem;color:var(--accent);position:absolute;left:0;top:.8rem}
+        .lab-email-highlight{color:var(--teal-light);font-family:var(--mono);font-size:.9rem}
+        .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+        .tool-item{padding:1.6rem;border:1px solid var(--light-line);background:white}
+        .tool-item h4{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+        .tool-item p{font-size:.86rem;color:var(--muted);line-height:1.7}
+        .contact-section{background:var(--ink);color:white;position:relative;overflow:hidden}
+        .contact-section::after{content:'';position:absolute;bottom:0;right:0;width:300px;height:300px;opacity:.03;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:8px 8px}
+        .contact-section .section-label{color:var(--teal-light)}
+        .contact-section .section-title{color:white}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+        .contact-text p{color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:1.5rem}
+        .contact-email-block{margin-top:2rem}
+        .contact-email-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem}
+        .contact-email{font-family:var(--serif);font-size:1.4rem;color:var(--teal-light);text-decoration:none;transition:color .2s}
+        .contact-email:hover{color:white}
+        .contact-links h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
+        .contact-link-list{list-style:none}
+        .contact-link-list li{margin-bottom:.7rem}
+        .contact-link-list a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.92rem;transition:color .2s;display:inline-flex;align-items:center;gap:.5rem}
+        .contact-link-list a:hover{color:white}
+        .contact-link-list .link-arrow{font-size:.8rem;transition:transform .2s}
+        .contact-link-list a:hover .link-arrow{transform:translateX(3px)}
+        footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:2rem;text-align:center}
+        footer p{font-size:.75rem;color:rgba(255,255,255,.3);font-family:var(--mono);letter-spacing:.05em}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.2)}}
+        .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+        a.inline-link{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
+        a.inline-link:hover{color:var(--accent)}
+        @media(max-width:900px){.about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}}
+        @media(max-width:680px){html{font-size:15px}section{padding:3.5rem 1.2rem}.nav-links{display:none}.mobile-toggle{display:block}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--light-line);padding:1.5rem 2rem;gap:1rem}.hero-meta{gap:1.5rem}.research-grid,.lab-tracks,.teaching-grid{grid-template-columns:1fr}.lab-how{padding:2rem 1.5rem}.pub-tabs{gap:0}.pub-tab{padding:.5rem .7rem;font-size:.7rem}.pixel-deco{display:none}}
+    </style>
+</head>
+<body>
+
+<nav id="nav"><div class="nav-inner">
+<a href="#" class="nav-logo">
+<svg class="pixel-art" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="0" width="4" height="4" fill="#b44a2d"/><rect x="8" y="0" width="4" height="4" fill="#2a6b5e"/><rect x="12" y="0" width="4" height="4" fill="#b44a2d"/><rect x="16" y="0" width="4" height="4" fill="#2a6b5e"/><rect x="0" y="4" width="4" height="4" fill="#2a6b5e"/><rect x="4" y="4" width="4" height="4" fill="#b44a2d"/><rect x="12" y="4" width="4" height="4" fill="#2a6b5e"/><rect x="20" y="4" width="4" height="4" fill="#b44a2d"/><rect x="0" y="8" width="4" height="4" fill="#b44a2d"/><rect x="8" y="8" width="8" height="4" fill="#0f1419"/><rect x="20" y="8" width="4" height="4" fill="#2a6b5e"/><rect x="0" y="12" width="4" height="4" fill="#2a6b5e"/><rect x="8" y="12" width="8" height="4" fill="#0f1419"/><rect x="20" y="12" width="4" height="4" fill="#b44a2d"/><rect x="4" y="16" width="4" height="4" fill="#2a6b5e"/><rect x="12" y="16" width="4" height="4" fill="#b44a2d"/><rect x="16" y="16" width="4" height="4" fill="#2a6b5e"/><rect x="8" y="20" width="4" height="4" fill="#b44a2d"/><rect x="12" y="20" width="4" height="4" fill="#2a6b5e"/></svg>
+ACBOS<span>.lab</span></a>
+<ul class="nav-links" id="navLinks"><li><a href="#about">About</a></li><li><a href="#research">Research</a></li><li><a href="#publications">Publications</a></li><li><a href="#teaching">Teaching</a></li><li><a href="#lab">Virtual Lab</a></li><li><a href="#contact">Contact</a></li></ul>
+<button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<section class="hero" id="home">
+<div class="hero-bg"></div><div class="hero-pixel-grid"></div>
+<svg class="pixel-deco pixel-deco-1 pixel-art" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="0" width="8" height="8" fill="#b44a2d"/><rect x="56" y="0" width="8" height="8" fill="#2a6b5e"/><rect x="72" y="0" width="8" height="8" fill="#b44a2d"/><rect x="104" y="0" width="8" height="8" fill="#2a6b5e"/><rect x="24" y="16" width="8" height="8" fill="#2a6b5e"/><rect x="56" y="16" width="8" height="8" fill="#b44a2d"/><rect x="88" y="16" width="8" height="8" fill="#2a6b5e"/><rect x="120" y="16" width="8" height="8" fill="#b44a2d"/><rect x="0" y="32" width="8" height="8" fill="#b44a2d"/><rect x="40" y="32" width="8" height="8" fill="#0f1419"/><rect x="72" y="32" width="8" height="8" fill="#0f1419"/><rect x="104" y="32" width="8" height="8" fill="#0f1419"/><rect x="136" y="32" width="8" height="8" fill="#2a6b5e"/><rect x="16" y="48" width="8" height="8" fill="#2a6b5e"/><rect x="48" y="48" width="8" height="8" fill="#b44a2d"/><rect x="80" y="48" width="8" height="8" fill="#2a6b5e"/><rect x="112" y="48" width="8" height="8" fill="#b44a2d"/><rect x="32" y="64" width="8" height="8" fill="#b44a2d"/><rect x="64" y="64" width="8" height="8" fill="#2a6b5e"/><rect x="96" y="64" width="8" height="8" fill="#b44a2d"/><rect x="128" y="64" width="8" height="8" fill="#2a6b5e"/><rect x="0" y="80" width="8" height="8" fill="#2a6b5e"/><rect x="48" y="80" width="8" height="8" fill="#0f1419"/><rect x="80" y="80" width="8" height="8" fill="#0f1419"/><rect x="112" y="80" width="8" height="8" fill="#0f1419"/><rect x="152" y="80" width="8" height="8" fill="#b44a2d"/><rect x="24" y="96" width="8" height="8" fill="#b44a2d"/><rect x="56" y="96" width="8" height="8" fill="#2a6b5e"/><rect x="88" y="96" width="8" height="8" fill="#b44a2d"/><rect x="120" y="96" width="8" height="8" fill="#2a6b5e"/><rect x="40" y="112" width="8" height="8" fill="#2a6b5e"/><rect x="72" y="112" width="8" height="8" fill="#b44a2d"/><rect x="104" y="112" width="8" height="8" fill="#2a6b5e"/><rect x="136" y="112" width="8" height="8" fill="#b44a2d"/><rect x="16" y="128" width="8" height="8" fill="#b44a2d"/><rect x="64" y="128" width="8" height="8" fill="#0f1419"/><rect x="96" y="128" width="8" height="8" fill="#0f1419"/><rect x="144" y="128" width="8" height="8" fill="#2a6b5e"/><rect x="40" y="144" width="8" height="8" fill="#2a6b5e"/><rect x="80" y="144" width="8" height="8" fill="#b44a2d"/><rect x="120" y="144" width="8" height="8" fill="#2a6b5e"/></svg>
+<svg class="pixel-deco pixel-deco-2 pixel-art" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="24" height="24" fill="none" stroke="#b44a2d" stroke-width="4"/><rect x="16" y="16" width="8" height="8" fill="#b44a2d"/><rect x="32" y="16" width="16" height="4" fill="#0f1419"/><rect x="48" y="8" width="24" height="24" fill="none" stroke="#2a6b5e" stroke-width="4"/><rect x="56" y="16" width="8" height="8" fill="#2a6b5e"/><rect x="72" y="16" width="16" height="4" fill="#0f1419"/><rect x="88" y="8" width="24" height="24" fill="none" stroke="#b44a2d" stroke-width="4"/><rect x="96" y="16" width="8" height="8" fill="#b44a2d"/><rect x="8" y="48" width="24" height="24" fill="none" stroke="#2a6b5e" stroke-width="4"/><rect x="16" y="56" width="8" height="8" fill="#2a6b5e"/><rect x="32" y="56" width="16" height="4" fill="#0f1419"/><rect x="48" y="48" width="24" height="24" fill="none" stroke="#b44a2d" stroke-width="4"/><rect x="56" y="56" width="8" height="8" fill="#b44a2d"/><rect x="72" y="56" width="16" height="4" fill="#0f1419"/><rect x="88" y="48" width="24" height="24" fill="none" stroke="#2a6b5e" stroke-width="4"/><rect x="96" y="56" width="8" height="8" fill="#2a6b5e"/><rect x="8" y="88" width="24" height="24" fill="none" stroke="#b44a2d" stroke-width="4"/><rect x="16" y="96" width="8" height="8" fill="#b44a2d"/><rect x="48" y="88" width="24" height="24" fill="none" stroke="#2a6b5e" stroke-width="4"/><rect x="56" y="96" width="8" height="8" fill="#2a6b5e"/><rect x="88" y="88" width="24" height="24" fill="none" stroke="#b44a2d" stroke-width="4"/><rect x="96" y="96" width="8" height="8" fill="#b44a2d"/></svg>
+<svg class="pixel-deco pixel-deco-3 pixel-art" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="72" height="72" fill="none" stroke="#0f1419" stroke-width="4"/><rect x="8" y="4" width="64" height="12" fill="#0f1419"/><rect x="12" y="7" width="6" height="6" fill="#b44a2d"/><rect x="22" y="7" width="6" height="6" fill="#2a6b5e"/><rect x="32" y="7" width="6" height="6" fill="#b44a2d"/><rect x="16" y="24" width="4" height="4" fill="#2a6b5e"/><rect x="20" y="28" width="4" height="4" fill="#2a6b5e"/><rect x="24" y="32" width="4" height="4" fill="#2a6b5e"/><rect x="20" y="36" width="4" height="4" fill="#2a6b5e"/><rect x="16" y="40" width="4" height="4" fill="#2a6b5e"/><rect x="32" y="36" width="20" height="4" fill="#b44a2d"/><rect x="16" y="52" width="32" height="4" fill="#0f1419" opacity="0.3"/><rect x="48" y="52" width="8" height="4" fill="#b44a2d"/></svg>
+<div class="hero-content">
+<p class="hero-eyebrow">William Paterson University · Department of Computer Science</p>
+<h1 class="hero-title">ACBOS <em>Virtual</em> Research Laboratory</h1>
+<p class="hero-subtitle">Investigating the convergence of Artificial Intelligence, Cognitive Systems, Blockchain Technology, and Open-Source Computing to build adaptive, decentralized, and intelligent systems for the future.</p>
+<div class="hero-meta">
+<div class="hero-stat"><div class="hero-stat-number">115+</div><div class="hero-stat-label">Publications</div></div>
+<div class="hero-stat"><div class="hero-stat-number">1,758+</div><div class="hero-stat-label">Citations</div></div>
+<div class="hero-stat"><div class="hero-stat-number">5</div><div class="hero-stat-label">Books</div></div>
+<div class="hero-stat"><div class="hero-stat-number">15+</div><div class="hero-stat-label">Years of Research</div></div>
+</div></div>
+<div class="hero-scroll-cue"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="pixel-separator"><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div></div>
+
+<section class="about-section" id="about"><div class="container">
+<p class="section-label fade-in"><span class="px-icon"><span class="px px-accent"></span><span class="px px-teal"></span><span class="px px-accent"></span></span>Director</p>
+<h2 class="section-title fade-in">Dr. Ali Mohammad Saghiri</h2>
+<div class="about-grid"><div class="about-bio fade-in">
+<p>Dr. Ali Mohammad Saghiri is an Assistant Professor of Computer Science at William Paterson University in New Jersey. With over 15 years of research experience, he works at the intersection of Artificial Intelligence, Cognitive Systems, Blockchain, and Distributed Computing. His work bridges theoretical foundations in reinforcement learning and formal methods with practical applications in decentralized systems, autonomous decision-making, and self-evolving software.</p>
+<p>Before joining William Paterson in 2023, Dr. Saghiri held postdoctoral research positions at Stevens Institute of Technology, where he worked on cybersecurity challenges in AI, peer-to-peer energy trading markets, topology optimization using reinforcement learning, adaptive cruise control algorithms, Central Bank Digital Currencies, and blockchain-based budget management systems.</p>
+<p>He earned his Ph.D. and M.Sc. in Computer Engineering from Amirkabir University of Technology (Tehran Polytechnic), studying under Professor Mohammad Reza Meybodi at the Soft Computing Laboratory. His doctoral research advanced the theory of Dynamic Cellular Learning Automata and their applications in peer-to-peer network optimization. His M.Sc. thesis focused on personalized information retrieval in peer-to-peer systems under the supervision of Dr. Alireza Bagheri.</p>
+<p>He also served as a consultant at Rutgers School of Dental Medicine on research involving applications of Digital Twins and Artificial Intelligence in dentistry, and held visiting professor and researcher positions at multiple institutions and Mazandaran University of Science and Technology.</p>
+<p>Dr. Saghiri is a strong advocate for open-source software and Linux-based systems in both research and education. He has authored 5 books, 7 book chapters, 20 journal papers, and 25+ conference papers, accumulating over 1,758 citations.</p>
+</div>
+<div class="about-details fade-in">
+<div class="detail-block"><h4>Current Position</h4><p>Assistant Professor , Dept. of Computer Science, William Paterson University, Wayne, NJ (2023–Present)</p></div>
+<div class="detail-block"><h4>Education</h4><ul><li>Ph.D. in Computer Engineering (AI) — Amirkabir University of Technology, 2010–2017. Advisor: Prof. M. R. Meybodi</li><li>M.Sc. in Computer Engineering (Software) — Amirkabir University of Technology, 2007–2010. GPA: 3.72. Advisor: Dr. A. Bagheri</li></ul></div>
+<div class="detail-block"><h4>Research Interests</h4><ul><li>Artificial General Intelligence &amp; Cognitive Systems</li><li>Blockchain, Web 3.0 &amp; Decentralized Systems</li><li>Reinforcement Learning &amp; Learning Automata</li><li>Formal Methods &amp; Software Verification</li><li>Internet of Things (IoT)</li><li>Linux &amp; Open-Source Computing</li><li>Distributed Systems &amp; Peer-to-Peer Networks</li><li>Software Engineering</li></ul></div>
+<div class="detail-block"><h4>Editorial Roles</h4><ul><li>Guest Editor — Applied Sciences (MDPI)</li><li>Guest Editor — Mathematical Biosciences &amp; Engineering</li><li>Editorial Board — Int'l J. Advances in Applied Sciences</li></ul></div>
+<div class="detail-block"><h4>Selected Prior Positions</h4><ul><li>Postdoc — Stevens Institute of Technology, School of Business (2023)</li><li>Postdoc — Stevens Institute of Technology, School of Systems (2022)</li><li>Consultant — Rutgers School of Dental Medicine (2022–Present)</li><li>Researcher — IoT Center, Amirkabir University (2018–2020)</li><li>Visiting Prof — Mazandaran University of Science &amp; Technology (2019–2022)</li></ul></div>
+<div class="detail-block"><h4>Awards</h4><ul><li>Ranked top 0.2% among 10,395 in national university exam (2007)</li><li>Full Ph.D. scholarship, Amirkabir University of Technology (2010–2017)</li><li>Best Paper Award, Int'l Conference on Web Research — ICWR (2018)</li></ul></div>
+</div></div></div></section>
+
+<div class="pixel-separator"><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-muted"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div></div>
+
+<section id="research"><div class="container">
+<p class="section-label fade-in"><span class="px-icon"><span class="px px-teal"></span><span class="px px-accent"></span><span class="px px-teal"></span></span>Research Pillars</p>
+<h2 class="section-title fade-in">Where Our Work Lives</h2>
+<p class="section-intro fade-in">The ACBOS Lab operates at four intersecting frontiers. Our research philosophy is rooted in building systems that are adaptive, decentralized, verifiable, and open.</p>
+<div class="research-grid">
+<div class="research-card fade-in">
+<svg class="research-card-icon pixel-art" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="0" width="4" height="4" fill="#b44a2d"/><rect x="20" y="0" width="4" height="4" fill="#b44a2d"/><rect x="8" y="4" width="4" height="4" fill="#b44a2d"/><rect x="24" y="4" width="4" height="4" fill="#b44a2d"/><rect x="4" y="8" width="4" height="4" fill="#2a6b5e"/><rect x="16" y="8" width="8" height="4" fill="#0f1419"/><rect x="28" y="8" width="4" height="4" fill="#2a6b5e"/><rect x="4" y="12" width="4" height="4" fill="#b44a2d"/><rect x="12" y="12" width="4" height="4" fill="#0f1419"/><rect x="20" y="12" width="4" height="4" fill="#0f1419"/><rect x="28" y="12" width="4" height="4" fill="#b44a2d"/><rect x="4" y="16" width="4" height="4" fill="#2a6b5e"/><rect x="16" y="16" width="8" height="4" fill="#0f1419"/><rect x="28" y="16" width="4" height="4" fill="#2a6b5e"/><rect x="8" y="20" width="4" height="4" fill="#b44a2d"/><rect x="24" y="20" width="4" height="4" fill="#b44a2d"/><rect x="12" y="24" width="4" height="4" fill="#2a6b5e"/><rect x="20" y="24" width="4" height="4" fill="#2a6b5e"/><rect x="16" y="28" width="4" height="4" fill="#b44a2d"/></svg>
+<h3>Artificial Intelligence &amp; Cognitive Systems</h3>
+<p>We investigate how intelligent agents learn, adapt, and make decisions in complex, uncertain environments. Our work in reinforcement learning — particularly Learning Automata theory — forms the backbone of adaptive algorithms for distributed systems. We explore cognitive architectures that enable self-awareness, self-organization, and emergent intelligence, drawing from cellular automata, fungal growth patterns, and Schelling segregation models.</p></div>
+<div class="research-card fade-in">
+<svg class="research-card-icon pixel-art" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="12" height="12" fill="none" stroke="#2a6b5e" stroke-width="3"/><rect x="8" y="8" width="4" height="4" fill="#2a6b5e"/><rect x="16" y="8" width="8" height="3" fill="#0f1419"/><rect x="24" y="4" width="12" height="12" fill="none" stroke="#b44a2d" stroke-width="3"/><rect x="28" y="8" width="4" height="4" fill="#b44a2d"/><rect x="14" y="24" width="12" height="12" fill="none" stroke="#2a6b5e" stroke-width="3"/><rect x="18" y="28" width="4" height="4" fill="#2a6b5e"/><rect x="8" y="16" width="3" height="8" fill="#0f1419"/><rect x="28" y="16" width="3" height="8" fill="#0f1419"/></svg>
+<h3>Blockchain &amp; Decentralized Computing</h3>
+<p>From defending Proof-of-Work protocols against selfish mining attacks to designing decentralized platoon management, our blockchain research spans theory and application. We use AI-driven defense mechanisms (Q-learning, variable-depth learning automata) and study blockchain architectures for search engines, healthcare data, budget systems, energy trading, and CBDCs.</p></div>
+<div class="research-card fade-in">
+<svg class="research-card-icon pixel-art" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="36" height="36" fill="none" stroke="#0f1419" stroke-width="3"/><rect x="4" y="2" width="32" height="8" fill="#0f1419"/><rect x="7" y="4" width="4" height="4" fill="#b44a2d"/><rect x="13" y="4" width="4" height="4" fill="#2a6b5e"/><rect x="19" y="4" width="4" height="4" fill="#b44a2d"/><rect x="8" y="14" width="3" height="3" fill="#2a6b5e"/><rect x="11" y="17" width="3" height="3" fill="#2a6b5e"/><rect x="14" y="20" width="3" height="3" fill="#2a6b5e"/><rect x="11" y="23" width="3" height="3" fill="#2a6b5e"/><rect x="8" y="26" width="3" height="3" fill="#2a6b5e"/><rect x="18" y="23" width="12" height="3" fill="#b44a2d"/><rect x="8" y="32" width="16" height="3" fill="#0f1419" opacity="0.2"/><rect x="24" y="32" width="6" height="3" fill="#b44a2d"/></svg>
+<h3>Linux &amp; Open-Source Systems</h3>
+<p>We are committed to open-source as both a philosophy and a practical research framework. Our lab uses Linux-based environments for all development. We research adaptive shell scripting with LLMs, system administration automation, and formal verification of system-level code. Reproducible, open computing is essential for credible science.</p></div>
+<div class="research-card fade-in">
+<svg class="research-card-icon pixel-art" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="0" width="8" height="4" fill="#b44a2d"/><rect x="12" y="4" width="4" height="4" fill="#2a6b5e"/><rect x="24" y="4" width="4" height="4" fill="#2a6b5e"/><rect x="8" y="8" width="4" height="4" fill="#b44a2d"/><rect x="28" y="8" width="4" height="4" fill="#b44a2d"/><rect x="4" y="12" width="32" height="4" fill="#0f1419"/><rect x="8" y="16" width="24" height="4" fill="#2a6b5e"/><rect x="12" y="20" width="16" height="4" fill="#0f1419"/><rect x="8" y="24" width="24" height="4" fill="#b44a2d"/><rect x="4" y="28" width="32" height="4" fill="#0f1419"/><rect x="16" y="32" width="8" height="4" fill="#2a6b5e"/><rect x="12" y="36" width="4" height="4" fill="#b44a2d"/><rect x="24" y="36" width="4" height="4" fill="#b44a2d"/></svg>
+<h3>Formal Methods &amp; Self-Evolving Software</h3>
+<p>We develop formal verification frameworks using SMT solvers (Z3), temporal logic model checking (SPIN), and mathematical proof systems to verify LLM-generated code. Our self-evolving programs combine Large Language Models with Quine programs to create software that adapts and improves autonomously.</p></div>
+</div></div></section>
+
+<div class="pixel-separator"><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-muted"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div></div>
+
+<section class="pub-section" id="publications"><div class="container">
+<p class="section-label fade-in"><span class="px-icon"><span class="px px-accent"></span><span class="px px-ink"></span><span class="px px-accent"></span></span>Scholarship</p>
+<h2 class="section-title fade-in">Complete Publications</h2>
+<p class="section-intro fade-in">All peer-reviewed publications. For real-time citation data visit <a href="https://scholar.google.com/citations?user=CVgzMqUAAAAJ" class="inline-link" target="_blank" rel="noopener">Google Scholar</a>, <a href="https://www.researchgate.net/profile/Ali-Mohammad-Saghiri" class="inline-link" target="_blank" rel="noopener">ResearchGate</a>, or <a href="https://dblp.org/pid/148/6931.html" class="inline-link" target="_blank" rel="noopener">DBLP</a>.</p>
+<div class="pub-tabs fade-in">
+<button class="pub-tab active" onclick="showTab('books')">Books <span class="pub-count">(5)</span></button>
+<button class="pub-tab" onclick="showTab('chapters')">Chapters <span class="pub-count">(7)</span></button>
+<button class="pub-tab" onclick="showTab('journals')">Journals <span class="pub-count">(20)</span></button>
+<button class="pub-tab" onclick="showTab('conferences')">Conferences <span class="pub-count">(25)</span></button>
+</div>
+
+<div class="pub-panel active" id="books">
+<div class="pub-item"><div class="pub-year">2025</div><div class="pub-title">Blockchain for Beginners: A Project-Based Approach</div><div class="pub-authors">A. M. Saghiri, N. Wang</div><div class="pub-venue">Cognella Academic Publishing</div><span class="pub-tag">Textbook</span></div>
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">AI Millionaire: A Guide to Forecasting Future Jobs and Hunting Opportunities</div><div class="pub-authors">A. M. Saghiri</div><div class="pub-venue">Amazon</div><span class="pub-tag">Self-Published</span></div>
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">How to Become an Expert In Job Hunting: Harnessing the Power of Generative Chatbots</div><div class="pub-authors">A. M. Saghiri</div><div class="pub-venue">Amazon</div><span class="pub-tag">Self-Published</span></div>
+<div class="pub-item"><div class="pub-year">2023</div><div class="pub-title">Why GPT-Based Chatbots Will Be Vital: Applications, Challenges, and the Shaping of the Fragile Job Market</div><div class="pub-authors">A. M. Saghiri</div><div class="pub-venue">Amazon</div><span class="pub-tag">Self-Published</span></div>
+<div class="pub-item"><div class="pub-year">2019</div><div class="pub-title">Intelligent Random Walk: An Approach Based on Learning Automata</div><div class="pub-authors">A. M. Saghiri, M. D. Khomami, M. R. Meybodi</div><div class="pub-venue">Springer</div><span class="pub-tag">Monograph</span></div>
+<div class="pub-item"><div class="pub-year">2018</div><div class="pub-title">Recent Advances in Learning Automata</div><div class="pub-authors">A. Rezvanian, A. M. Saghiri, S. M. Vahidipour, M. Esnaashari, M. R. Meybodi</div><div class="pub-venue">Springer — Studies in Computational Intelligence, Vol. 754</div><span class="pub-tag">Edited Volume</span></div>
+</div>
+
+<div class="pub-panel" id="chapters">
+<div class="pub-item"><div class="pub-year">2023</div><div class="pub-title">Applications of Digital Twins to Migraine</div><div class="pub-authors">A. M. Saghiri, K. G. HamlAbadi, M. Vahdati</div><div class="pub-venue">Digital Twin for Healthcare, Elsevier</div></div>
+<div class="pub-item"><div class="pub-year">2022</div><div class="pub-title">Cognitive Internet of Things: Challenges and Solutions</div><div class="pub-authors">A. M. Saghiri</div><div class="pub-venue">Artificial Intelligence-Based Internet of Things Systems, Springer, pp. 335–362</div></div>
+<div class="pub-item"><div class="pub-year">2021</div><div class="pub-title">IoT-Based Healthcare Monitoring Using Blockchain</div><div class="pub-authors">M. Vahdati, K. G. HamlAbadi, A. M. Saghiri</div><div class="pub-venue">Applications of Blockchain in Healthcare, Springer, pp. 141–170</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">Blockchain Architecture</div><div class="pub-authors">A. M. Saghiri</div><div class="pub-venue">Advanced Applications of Blockchain Technology, Springer, pp. 161–176</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">Lurkers versus Posters: Investigation of the Participation Behaviors in Online Learning Communities</div><div class="pub-authors">O. R. B. Speily, A. Rezvanian, A. Ghasemzadeh, A. M. Saghiri, S. M. Vahidipour</div><div class="pub-venue">Educational Networking, Springer, pp. 269–298</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">The Internet of Things, Artificial Intelligence, and Blockchain: Implementation Perspectives</div><div class="pub-authors">A. M. Saghiri, K. G. HamlAbadi, M. Vahdati</div><div class="pub-venue">Advanced Applications of Blockchain Technology, Springer, pp. 15–54</div></div>
+<div class="pub-item"><div class="pub-year">2014</div><div class="pub-title">A Learning Automata-Based Version of SG-1 Protocol for Super-Peer Selection in P2P Networks</div><div class="pub-authors">S. Gholami, M. R. Meybodi, A. M. Saghiri</div><div class="pub-venue">Recent Advances in Information and Communication Technology, Springer, pp. 189–201</div></div>
+</div>
+
+<div class="pub-panel" id="journals">
+<div class="pub-item"><div class="pub-year">2025</div><div class="pub-title">Asymmetric Variable Depth Learning Automaton and Its Application in Defending Against Selfish Mining Attacks on Bitcoin</div><div class="pub-authors">A. Nikhalat-Jahromi, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Applied Soft Computing, Vol. 170</div></div>
+<div class="pub-item"><div class="pub-year">2025</div><div class="pub-title">Cellular Goore Game with Multiple Learning Automata in Each Cell and Its Applications</div><div class="pub-authors">M. M. Daliri Khomami, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">The Journal of Supercomputing, 81(7)</div></div>
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">A Bibliometric Analysis of Quantum Machine Learning Research</div><div class="pub-authors">A. Ahmadikia, A. Shirzad, A. M. Saghiri</div><div class="pub-venue">Science &amp; Technology Libraries</div></div>
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">CaAIS: Cellular Automata-Based Artificial Immune System for Dynamic Environments</div><div class="pub-authors">A. Rezvanian, S. M. Vahidipour, A. M. Saghiri</div><div class="pub-venue">Algorithms, 17(1)</div></div>
+<div class="pub-item"><div class="pub-year">2023</div><div class="pub-title">A Literature Review of Energy Optimal Adaptive Cruise Control Algorithms</div><div class="pub-authors">S. Vasebi, Y. M. Hayeri, A. M. Saghiri</div><div class="pub-venue">IEEE Access, Vol. 11, pp. 13636–13646</div></div>
+<div class="pub-item"><div class="pub-year">2022</div><div class="pub-title">A Survey of Artificial Intelligence Challenges: Analyzing the Definitions, Relationships, and Evolutions</div><div class="pub-authors">A. M. Saghiri, M. R. Jabbarpour, M. Vahidipour, M. Sookhak, A. Forestiero</div><div class="pub-venue">Applied Sciences, 12, pp. 40–54</div></div>
+<div class="pub-item"><div class="pub-year">2022</div><div class="pub-title">HLA: A Novel Hybrid Model Based on Fixed Structure and Variable Structure Learning Automata</div><div class="pub-authors">S. Gholami, A. M. Saghiri, S. M. Vahidipour, M. R. Meybodi</div><div class="pub-venue">Journal of Experimental &amp; Theoretical Artificial Intelligence</div></div>
+<div class="pub-item"><div class="pub-year">2021</div><div class="pub-title">A Framework for Component Selection Considering Dark Sides of AI: A Case Study on Autonomous Vehicle</div><div class="pub-authors">M. R. Jabbarpour, A. M. Saghiri, M. Sookhak</div><div class="pub-venue">Electronics, 10, 384</div></div>
+<div class="pub-item"><div class="pub-year">2021</div><div class="pub-title">A Self-Adaptive Algorithm for Super-Peer Selection Considering Mobility of Peers in Cognitive Mobile P2P Networks</div><div class="pub-authors">N. Amirazodi, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">International Journal of Communication Systems, 34(1)</div></div>
+<div class="pub-item"><div class="pub-year">2021</div><div class="pub-title">A Survey on Blockchain-Based Search Engines</div><div class="pub-authors">E. Rezaee, A. M. Saghiri, A. Forestiero</div><div class="pub-venue">Applied Sciences, 11(15), 7063</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">Extracting Strategies for Improving IoT-Based Home Industries in Iran: A SWOT Analysis</div><div class="pub-authors">R. Mahmoudi, S. Roozi, A. M. Saghiri, A. Mahmoudi</div><div class="pub-venue">IEEE Transactions on Engineering Management, 68(2), pp. 586–598</div></div>
+<div class="pub-item"><div class="pub-year">2018</div><div class="pub-title">Open Asynchronous Dynamic Cellular Learning Automata and Its Application to Allocation Hub Location Problem</div><div class="pub-authors">A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Knowledge-Based Systems, 139, pp. 149–169</div></div>
+<div class="pub-item"><div class="pub-year">2018</div><div class="pub-title">An Adaptive Super-Peer Selection Algorithm Considering Peers Capacity Utilizing Asynchronous Dynamic Cellular Learning Automata</div><div class="pub-authors">A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Applied Intelligence, 48(2), pp. 271–299</div></div>
+<div class="pub-item"><div class="pub-year">2018</div><div class="pub-title">On Expediency of Closed Asynchronous Dynamic Cellular Learning Automata</div><div class="pub-authors">A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Journal of Computational Science, 24, pp. 371–378</div></div>
+<div class="pub-item"><div class="pub-year">2018</div><div class="pub-title">An Adaptive Algorithm for Super-Peer Selection Considering Peer's Capacity in Mobile P2P Networks Based on Learning Automata</div><div class="pub-authors">N. Amirazodi, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Peer-to-Peer Networking and Applications, 11, pp. 74–89</div></div>
+<div class="pub-item"><div class="pub-year">2017</div><div class="pub-title">A Distributed Adaptive Landmark Clustering Algorithm Based on mOverlay and Learning Automata for Topology Mismatch Problem</div><div class="pub-authors">A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">International Journal of Communication Systems, 30(3)</div></div>
+<div class="pub-item"><div class="pub-year">2017</div><div class="pub-title">A Delay Aware Super-Peer Selection Algorithm for Gradient Topology Utilizing Learning Automata</div><div class="pub-authors">S. F. Deiman, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Wireless Personal Communications, 95(3), pp. 2611–2624</div></div>
+<div class="pub-item"><div class="pub-year">2017</div><div class="pub-title">A Closed Asynchronous Dynamic Model of Cellular Learning Automata and Its Application to Peer-to-Peer Networks</div><div class="pub-authors">A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Genetic Programming and Evolvable Machines, 18(3), pp. 313–349</div></div>
+<div class="pub-item"><div class="pub-year">2016</div><div class="pub-title">An Approach for Designing Cognitive Engines in Cognitive Peer-to-Peer Networks</div><div class="pub-authors">A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Journal of Network and Computer Applications, 70, pp. 17–40</div></div>
+<div class="pub-item"><div class="pub-year">2016</div><div class="pub-title">A Self-Adaptive Algorithm for Topology Matching in Unstructured Peer-to-Peer Networks</div><div class="pub-authors">A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">Journal of Network and Systems Management, 24, pp. 393–426</div></div>
+</div>
+
+<div class="pub-panel" id="conferences">
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">A Study on the Dark Sides of AI on the Future of Education</div><div class="pub-authors">A. M. Saghiri, M. A. Saghiri</div><div class="pub-venue">11th Annual NJBDA Symposium, Rutgers University</div></div>
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">Self-Evolving Programs: A Novel Approach Leveraging LLMs and Quine Programs</div><div class="pub-authors">A. M. Saghiri, N. Wang</div><div class="pub-venue">ICCIMS 2024 (IEEE)</div></div>
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">Decentralized Platoon Management Based on Blockchain: A SWOT Analysis Research Perspective</div><div class="pub-authors">A. M. Saghiri, N. Wang</div><div class="pub-venue">ICCIMS 2024 (IEEE)</div></div>
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">Q-Defense: When Q-Learning Comes to Help Proof-of-Work Against the Selfish Mining Attack</div><div class="pub-authors">A. Nikhalat-Jahromi, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">ICAART 2024</div></div>
+<div class="pub-item"><div class="pub-year">2024</div><div class="pub-title">A Framework for Cognitive Defense in Blockchain: AI-Based Protection Against Selfish Mining</div><div class="pub-authors">A. Nikhalat-Jahromi, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">ICAART 2024 — LNCS Vol. 15591, Springer</div></div>
+<div class="pub-item"><div class="pub-year">2023</div><div class="pub-title">A Generic Parametric Framework for Peer-to-Peer Electricity Market Design</div><div class="pub-authors">A. M. Saghiri, S. Moazeni</div><div class="pub-venue">IEEE EEEIC / I&amp;CPS Europe 2023</div></div>
+<div class="pub-item"><div class="pub-year">2022</div><div class="pub-title">Digital Twins in Cancer: State-of-the-Art and Open Research</div><div class="pub-authors">K. G. HamlAbadi, M. Vahdati, A. M. Saghiri, A. Forestiero</div><div class="pub-venue">IEEE/ACM CHASE 2021, pp. 199–204</div></div>
+<div class="pub-item"><div class="pub-year">2021</div><div class="pub-title">Solving Minimum Dominating Set in Multiplex Networks Using Learning Automata</div><div class="pub-authors">M. M. D. Khomami, A. Rezvanian, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">26th CSICC (IEEE), pp. 1–6</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">SIG-CLA: Significant Community Detection Based on Cellular Learning Automata</div><div class="pub-authors">M. M. D. Khomami, A. Rezvanian, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">8th CFIS (IEEE), pp. 039–044</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">Utilizing Cellular Learning Automata for Finding Communities in Weighted Networks</div><div class="pub-authors">M. M. D. Khomami, A. Rezvanian, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">6th ICWR (IEEE), pp. 325–329</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">Overlapping Community Detection in Social Networks Using Cellular Learning Automata</div><div class="pub-authors">M. M. D. Khomami, A. Rezvanian, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">28th ICEE (IEEE), pp. 1–6</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">A Survey on Challenges in Designing Cognitive Engines</div><div class="pub-authors">A. M. Saghiri</div><div class="pub-venue">6th ICWR (IEEE), pp. 165–171</div></div>
+<div class="pub-item"><div class="pub-year">2020</div><div class="pub-title">Distributed Learning Automata-Based Algorithm for Finding k-Clique in Complex Social Networks</div><div class="pub-authors">M. M. D. Khomami, A. Rezvanian, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">11th IKT (IEEE), pp. 139–143</div></div>
+<div class="pub-item"><div class="pub-year">2019</div><div class="pub-title">An Adaptive Topology Management Algorithm in P2P Networks Based on Learning Automata</div><div class="pub-authors">M. Ghorbani, M. R. Meybodi, A. M. Saghiri</div><div class="pub-venue">7th CFIS (IEEE), pp. 1–4</div></div>
+<div class="pub-item"><div class="pub-year">2019</div><div class="pub-title">An Architecture for Managing IoT Based on Cognitive Peer-to-Peer Networks</div><div class="pub-authors">M. Ghorbani, M. R. Meybodi, A. M. Saghiri</div><div class="pub-venue">5th ICWR (IEEE), pp. 111–116</div></div>
+<div class="pub-item"><div class="pub-year">2018</div><div class="pub-title">A Framework for Cognitive Internet of Things Based on Blockchain</div><div class="pub-authors">A. M. Saghiri, M. Vahdati, K. Gholizadeh, M. R. Meybodi, M. Dehghan, H. Rashidi</div><div class="pub-venue">4th ICWR (IEEE), pp. 138–143</div><span class="pub-tag">Best Paper</span></div>
+<div class="pub-item"><div class="pub-year">2018</div><div class="pub-title">A Self-Organized Framework for Insurance Based on IoT and Blockchain</div><div class="pub-authors">M. Vahdati, K. G. HamlAbadi, A. M. Saghiri, H. Rashidi</div><div class="pub-venue">IEEE FiCloud 2018, pp. 169–175</div></div>
+<div class="pub-item"><div class="pub-year">2017</div><div class="pub-title">An Algorithm for Weighted Positive Influence Dominating Set Based on Learning Automata</div><div class="pub-authors">M. M. D. Khomami, M. A. Haeri, M. R. Meybodi, A. M. Saghiri</div><div class="pub-venue">IEEE KBEI 2017, pp. 0734–0740</div></div>
+<div class="pub-item"><div class="pub-year">2017</div><div class="pub-title">A Framework for Cognitive Recommender Systems in the IoT</div><div class="pub-authors">K. G. HamlAbadi, A. M. Saghiri, M. Vahdati, M. D. TakhtFooladi, M. R. Meybodi</div><div class="pub-venue">IEEE KBEI 2017, pp. 0971–0976</div></div>
+<div class="pub-item"><div class="pub-year">2016</div><div class="pub-title">Adaptive Search in Unstructured P2P Networks Based on Ant Colony and Learning Automata</div><div class="pub-authors">A. Ahmadi, M. R. Meybodi, A. M. Saghiri</div><div class="pub-venue">AI and Robotics, IranOpen (IEEE), pp. 133–139</div></div>
+<div class="pub-item"><div class="pub-year">2016</div><div class="pub-title">An Adaptive Algorithm for Managing Gradient Topology in Peer-to-Peer Networks</div><div class="pub-authors">S. F. Deiman, A. M. Saghiri, M. R. Meybodi</div><div class="pub-venue">8th IKT (IEEE), pp. 91–97</div></div>
+<div class="pub-item"><div class="pub-year">2015</div><div class="pub-title">A Bandwidth-Aware Algorithm for Solving Topology Mismatch in P2P Networks Using Learning Automata and X-Bot</div><div class="pub-authors">M. H. G. Dolabi, M. R. Meybodi, A. M. Saghiri</div><div class="pub-venue">23rd ICEE (IEEE), pp. 607–612</div></div>
+<div class="pub-item"><div class="pub-year">2013</div><div class="pub-title">A New Version of k-Random Walks Algorithm in P2P Networks Utilizing Learning Automata</div><div class="pub-authors">M. Ghorbani, M. R. Meybodi, A. M. Saghiri</div><div class="pub-venue">5th IKT (IEEE), pp. 1–6</div></div>
+<div class="pub-item"><div class="pub-year">2013</div><div class="pub-title">A Novel Self-Adaptive Search Algorithm for Unstructured P2P Networks Utilizing Learning Automata</div><div class="pub-authors">M. Ghorbani, M. R. Meybodi, A. M. Saghiri</div><div class="pub-venue">3rd Joint Conf. AI &amp; Robotics / 5th RoboCup Iran Open (IEEE)</div></div>
+<div class="pub-item"><div class="pub-year">2010</div><div class="pub-title">Enhance Your Search Engine Functionality with Peer-to-Peer Systems</div><div class="pub-authors">A. Saghiri, A. Bagheri</div><div class="pub-venue">2nd ICCAE (IEEE), Vol. 1, pp. 583–586</div></div>
+<div class="pub-item"><div class="pub-year">2009</div><div class="pub-title">An Adaptive Architecture for Personalized Search Engine in Ubiquitous Environment with P2P Systems</div><div class="pub-authors">A. Saghiri, A. Bagheri</div><div class="pub-venue">Int'l Conf. Information and Multimedia Technology (IEEE), pp. 107–111</div></div>
+</div>
+</div></section>
+
+<div class="pixel-separator"><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-muted"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div></div>
+
+<section id="teaching"><div class="container">
+<p class="section-label fade-in"><span class="px-icon"><span class="px px-teal"></span><span class="px px-accent"></span><span class="px px-ink"></span></span>Teaching</p>
+<h2 class="section-title fade-in">Courses &amp; Talks</h2>
+<div class="teaching-grid fade-in">
+<div class="teaching-card"><h4>William Paterson University (Current)</h4><ul><li>Computer and Information Technology</li><li>System Administration</li><li>Computer Networks II</li><li>Discrete Mathematics</li></ul></div>
+<div class="teaching-card"><h4>Previous Institutions</h4><ul><li>Operating Systems — MUST</li><li>Computer Networks — MUST</li><li>Artificial Intelligence — Azad University</li><li>Database — Azad University</li><li>Software Engineering — Azad University</li><li>Theory of Automata — Azad University</li><li>Algorithms — Univ. of Science and Culture</li><li>Fundamentals of IoT — Sadra University</li><li>Programming Fundamentals — Amirkabir UT</li></ul></div>
+<div class="teaching-card"><h4>Invited Talks &amp; Workshops</h4><ul><li>Why Chatbots Will Be Vital in the Future of Education? — Cengage (2024)</li><li>Central Bank Digital Currencies — Stevens Institute (2022)</li><li>Internet of Things — Sharif University (2021)</li></ul></div>
+</div></div></section>
+
+<div class="pixel-separator"><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-muted"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div></div>
+
+<section class="lab-section" id="lab" style="background:var(--cream);"><div class="container lab-content">
+<p class="section-label fade-in"><span class="px-icon"><span class="px px-accent"></span><span class="px px-teal"></span><span class="px px-accent"></span></span>Join Us</p>
+<h2 class="section-title fade-in">Virtual Lab Space for Students</h2>
+<div class="lab-intro fade-in">
+<p>The ACBOS Virtual Lab is an open, collaborative research environment for motivated students — undergraduate and graduate — who want real experience working on cutting-edge problems in AI, cognitive systems, blockchain, and open-source software. Whether at William Paterson University or externally seeking research mentorship, our lab welcomes you.</p>
+<p>Participation is project-driven. Students are matched to active research projects based on interests and skill level, and receive direct mentorship from Dr. Saghiri. All work uses open-source tools and Linux-based environments. Students are encouraged to publish findings and contribute to open-source repositories. The lab operates virtually — participate from anywhere.</p>
+<p>Lab members build a portfolio of tangible research outputs — conference papers, journal articles, open-source code, and technical reports — preparing them for industry careers or graduate study.</p>
+</div>
+<div class="lab-tracks fade-in">
+<div class="lab-track"><span class="lab-track-number">01</span><h3>AI &amp; Reinforcement Learning</h3><p>Adaptive learning algorithms, neural network optimization, cognitive architectures, learning automata, LLM-based code generation with formal verification.</p><div class="lab-track-skills"><span>Python</span><span>PyTorch</span><span>Z3</span><span>SPIN</span><span>Linux</span></div></div>
+<div class="lab-track"><span class="lab-track-number">02</span><h3>Blockchain &amp; Decentralized Systems</h3><p>Consensus mechanism defense, smart contracts, blockchain search engines, healthcare data, DeFi analysis, CBDC research.</p><div class="lab-track-skills"><span>Solidity</span><span>Ethereum</span><span>Go</span><span>Rust</span><span>Linux</span></div></div>
+<div class="lab-track"><span class="lab-track-number">03</span><h3>Open-Source &amp; Systems</h3><p>System administration automation, adaptive shell scripting, CI/CD pipelines, reproducible research infrastructure, open-source contributions.</p><div class="lab-track-skills"><span>Bash</span><span>Git</span><span>Docker</span><span>CI/CD</span><span>Linux</span></div></div>
+<div class="lab-track"><span class="lab-track-number">04</span><h3>IoT &amp; Cognitive Networks</h3><p>Intelligent algorithms for IoT, peer-to-peer networks, cognitive mobile environments, digital twin architectures, adaptive resource discovery.</p><div class="lab-track-skills"><span>C/C++</span><span>MQTT</span><span>Python</span><span>Arduino</span><span>Linux</span></div></div>
+</div>
+<div class="lab-how fade-in"><h3>How to Join the Lab</h3><ol class="lab-how-steps">
+<li>Review the research tracks above and identify which area aligns with your interests.</li>
+<li>Prepare a brief statement describing your research interests, relevant coursework, and what you hope to gain.</li>
+<li>Attach your resume/CV and any relevant work samples (GitHub, class projects, papers).</li>
+<li>Send materials to <span class="lab-email-highlight">saghiria@wpunj.edu</span> with subject: <em style="color:rgba(255,255,255,0.9);">"ACBOS Lab — Student Application"</em>.</li>
+<li>Dr. Saghiri will respond within two weeks. If there is a good fit, an introductory meeting will be scheduled.</li>
+</ol></div>
+</div></section>
+
+<div class="pixel-separator"><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-muted"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div></div>
+
+<section id="tools"><div class="container">
+<p class="section-label fade-in"><span class="px-icon"><span class="px px-teal"></span><span class="px px-ink"></span><span class="px px-teal"></span></span>Philosophy &amp; Stack</p>
+<h2 class="section-title fade-in">Open-Source First</h2>
+<p class="section-intro fade-in">Every experiment in our lab is built on open-source foundations.</p>
+<div class="tools-grid fade-in">
+<div class="tool-item"><h4>Operating System</h4><p>Ubuntu &amp; Debian-based Linux for all development, simulation, and deployment.</p></div>
+<div class="tool-item"><h4>Languages</h4><p>Python, Bash/Shell, Solidity, C/C++, Go, Rust, Java, C#.</p></div>
+<div class="tool-item"><h4>AI &amp; ML</h4><p>PyTorch, TensorFlow, scikit-learn, Z3 SMT Solver, SPIN model checker, MATLAB.</p></div>
+<div class="tool-item"><h4>Blockchain</h4><p>Ethereum (Geth, Hardhat), Nethereum, Hyperledger, The Graph Protocol.</p></div>
+<div class="tool-item"><h4>Version Control</h4><p>Git and GitHub for all code, papers (LaTeX), and collaborative research.</p></div>
+<div class="tool-item"><h4>IDEs &amp; Tools</h4><p>PyCharm, Visual Studio, NetBeans, Docker, and CI/CD pipelines.</p></div>
+<div class="tool-item"><h4>Writing</h4><p>LaTeX, Overleaf, Pandoc. IEEE and Springer templates maintained in-lab.</p></div>
+<div class="tool-item"><h4>Hardware</h4><p>Arduino for IoT prototyping, sensor arrays, and embedded systems research.</p></div>
+</div></div></section>
+
+<div class="pixel-separator"><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-muted"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div><div class="px px-empty"></div><div class="px px-ink"></div><div class="px px-empty"></div><div class="px px-teal"></div><div class="px px-empty"></div><div class="px px-accent"></div></div>
+
+<section class="contact-section" id="contact"><div class="container">
+<p class="section-label"><span class="px-icon"><span class="px" style="background:var(--teal-light)"></span><span class="px" style="background:rgba(255,255,255,0.3)"></span><span class="px" style="background:var(--teal-light)"></span></span>Get in Touch</p>
+<h2 class="section-title">Contact</h2>
+<div class="contact-grid">
+<div class="contact-text">
+<p>Whether you are a student interested in joining the lab, a researcher seeking collaboration, or an industry partner exploring applied research — we would like to hear from you. All communication is handled through email.</p>
+<p>Dr. Saghiri welcomes inquiries about research projects, guest lectures, peer review collaborations, thesis supervision, and joint publications.</p>
+<div class="contact-email-block"><div class="contact-email-label">Email</div><a href="mailto:saghiria@wpunj.edu" class="contact-email">saghiria@wpunj.edu</a></div>
+<div class="contact-email-block" style="margin-top:1.5rem;"><div class="contact-email-label">Homepage</div><a href="https://amsaghiri.github.io/" class="contact-email" style="font-size:1.1rem;">amsaghiri.github.io</a></div>
+<div class="contact-email-block" style="margin-top:1.5rem;"><div class="contact-email-label">Location</div><p style="color:rgba(255,255,255,.65);font-size:.95rem;">Department of Computer Science<br>William Paterson University<br>300 Pompton Road, Wayne, NJ 07470</p></div>
+</div>
+<div class="contact-links">
+<h4>Academic Profiles</h4>
+<ul class="contact-link-list">
+<li><a href="https://scholar.google.com/citations?user=CVgzMqUAAAAJ" target="_blank" rel="noopener">Google Scholar <span class="link-arrow">→</span></a></li>
+<li><a href="https://www.researchgate.net/profile/Ali-Mohammad-Saghiri" target="_blank" rel="noopener">ResearchGate <span class="link-arrow">→</span></a></li>
+<li><a href="https://dblp.org/pid/148/6931.html" target="_blank" rel="noopener">DBLP <span class="link-arrow">→</span></a></li>
+<li><a href="https://ieeexplore.ieee.org/author/37396242500" target="_blank" rel="noopener">IEEE Xplore <span class="link-arrow">→</span></a></li>
+<li><a href="https://dl.acm.org/profile/99658988674" target="_blank" rel="noopener">ACM Digital Library <span class="link-arrow">→</span></a></li>
+<li><a href="https://www.linkedin.com/in/ali-mohammad-saghiri-60bba9a4/" target="_blank" rel="noopener">LinkedIn <span class="link-arrow">→</span></a></li>
+<li><a href="https://wpconnect.wpunj.edu/directories/faculty/default.cfm?user=saghiria" target="_blank" rel="noopener">WP Connect Faculty Page <span class="link-arrow">→</span></a></li>
+</ul>
+<h4 style="margin-top:2rem;">Journal Reviewer For</h4>
+<p style="color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.8;">IEEE Systems Journal · IEEE Access · IEEE Internet of Things · IEEE Trans. Info. Forensic &amp; Security · IEEE Trans. Computational Social Systems · Journal of Computational Science · Artificial Intelligence Review · The J. of Supercomputing · Applied Sciences · Sensors · Electronics · Entropy · Mathematics · and others</p>
+</div></div></div></section>
+
+<footer>
+<div style="display:flex;justify-content:center;gap:3px;margin-bottom:1rem;">
+<div style="width:5px;height:5px;background:#b44a2d;opacity:.4;"></div>
+<div style="width:5px;height:5px;background:#2a6b5e;opacity:.4;"></div>
+<div style="width:5px;height:5px;background:#b44a2d;opacity:.4;"></div>
+<div style="width:5px;height:5px;background:#2a6b5e;opacity:.4;"></div>
+<div style="width:5px;height:5px;background:#b44a2d;opacity:.4;"></div>
+</div>
+<p>&copy; 2025 ACBOS Lab — Dr. Ali Mohammad Saghiri · William Paterson University · Department of Computer Science</p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);});
+function showTab(tabId){document.querySelectorAll('.pub-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pub-panel').forEach(p=>p.classList.remove('active'));document.getElementById(tabId).classList.add('active');event.target.closest('.pub-tab').classList.add('active');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');});});
+</script>
+</body>
+</html>
