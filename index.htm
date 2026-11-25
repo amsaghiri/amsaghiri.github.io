@@ -102,6 +102,13 @@ img.cover{width:96px;height:152px;padding:0;object-fit:cover;box-shadow:0 6px 14
 .links{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.9rem;font-weight:600}
 
 /* lists */
+.labs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.labcard{display:block;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:10px;padding:26px 28px;color:var(--ink);transition:box-shadow .15s,transform .15s}
+.labcard:hover{text-decoration:none;box-shadow:0 12px 28px rgba(15,20,25,.1);transform:translateY(-2px)}
+.labcard.q{border-top-color:#2f55c9}
+.labcard h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;margin:8px 0 8px}
+.labcard p{color:var(--slate);font-size:.98rem}
+.labcard .go{display:inline-block;margin-top:14px;font-weight:600;color:var(--accent-deep)}
 .tl{list-style:none;border-left:2px solid var(--line);padding-left:22px}
 .tl li{position:relative;padding-bottom:22px}
 .tl li:last-child{padding-bottom:0}
@@ -142,7 +149,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   .stats{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(3){border-left:0}
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
-  .books,.cols{grid-template-columns:1fr}
+  .books,.cols,.labs{grid-template-columns:1fr}
   .feature{grid-template-columns:1fr;gap:22px;padding:26px 22px}
   .feature .cover{width:130px;height:185px}
   .cols{gap:38px}
@@ -174,7 +181,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#service">Service</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a class="lab" href="saghirilab.html">ACBOS Lab →</a></li>
+      <li><a class="lab" href="#labs">Labs</a></li>
     </ul>
   </div>
 </nav>
@@ -354,7 +361,31 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   </div>
 </section>
 
-<section class="alt" id="experience">
+<section class="alt" id="labs">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Labs</div>
+      <h2>Labs &amp; open courseware</h2>
+      <p>Two open, online spaces for research and teaching. Both welcome students.</p>
+    </div>
+    <div class="labs">
+      <a class="labcard" href="saghirilab.html">
+        <div class="meta">Research lab</div>
+        <h3>ACBOS Virtual Research Laboratory</h3>
+        <p>Research at the intersection of AI, cognitive systems, blockchain, and open-source computing, with project-based participation for graduate and undergraduate students.</p>
+        <span class="go">Visit the ACBOS Lab →</span>
+      </a>
+      <a class="labcard q" href="https://amsaghiri.github.io/open-quantum-computing-lab/">
+        <div class="meta">Open textbook &amp; laboratory</div>
+        <h3>Open Quantum Computing Lab</h3>
+        <p>An independent, project-based undergraduate textbook of quantum computing: 12 chapters and 24 reproducible experiments, from 15-minute micro-experiments to a capstone.</p>
+        <span class="go">Open the Quantum Lab →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
   <div class="wrap cols">
     <div>
       <div class="eyebrow">Experience</div>
@@ -400,7 +431,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   </div>
 </section>
 
-<section id="publications">
+<section class="alt" id="publications">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Publications</div>
@@ -419,7 +450,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   </div>
 </section>
 
-<section class="alt" id="teaching">
+<section id="teaching">
   <div class="wrap cols">
     <div>
       <div class="eyebrow">Teaching</div>
@@ -453,7 +484,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   </div>
 </section>
 
-<section id="service">
+<section class="alt" id="service">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Service</div>
