@@ -81,6 +81,19 @@ h3{font-size:1.05rem;font-weight:700;line-height:1.35}
 .cover i{font-family:var(--serif);font-style:normal;font-size:.9rem;line-height:1.15;padding-left:4px}
 .cover small{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;padding-left:4px}
 img.cover{width:96px;height:152px;padding:0;object-fit:cover;box-shadow:0 6px 14px rgba(15,20,25,.2);border-radius:3px}
+.cover{position:relative;overflow:hidden}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature{display:grid;grid-template-columns:170px 1fr;gap:34px;align-items:center;background:var(--ink);color:#e6e2d8;border-radius:12px;padding:32px 36px;margin-bottom:26px}
+.feature .cover{width:170px;height:242px;background:#2a6b5e;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.feature .cover i{font-size:1.25rem}
+.feature .tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;background:var(--accent);color:#fff;padding:4px 10px;border-radius:3px}
+.feature .meta{color:#9aa3ad;margin:14px 0 6px}
+.feature h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.15;color:#fff}
+.feature .subt{color:#c9cfd6;font-size:1.05rem;margin-top:6px}
+.feature p.desc{color:#b9c0c8;font-size:1rem;margin:14px 0 20px;max-width:62ch}
+.feature .btn{border-color:#e6e2d8;color:#e6e2d8}
+.feature .btn:hover{background:#e6e2d8;color:var(--ink)}
+.feature .btn.primary{border-color:var(--accent);color:#fff}
 .c1{background:#2a6b5e}.c2{background:#1e2430}.c3{background:#b44a2d}.c4{background:#35507a}
 .c5{background:#8a3520}.c6{background:#4a5568}.c7{background:#5b4a7a}.c8{background:#16443b}
 .meta{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
@@ -130,6 +143,8 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   .stat:nth-child(3){border-left:0}
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
   .books,.cols{grid-template-columns:1fr}
+  .feature{grid-template-columns:1fr;gap:22px;padding:26px 22px}
+  .feature .cover{width:130px;height:185px}
   .cols{gap:38px}
   section{padding:52px 0}
   .brand{display:none}
@@ -172,7 +187,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
         <h1>Ali Mohammad Saghiri</h1>
         <p class="lede">I work at the intersection of artificial intelligence, blockchain, and distributed systems — building adaptive, decentralized, and intelligent software, and writing books that make these technologies accessible.</p>
         <div class="actions">
-          <a class="btn primary" href="#books">Explore my books</a>
+          <a class="btn primary" href="#new-book">New book: Linux System Automation with n8n</a>
           <a class="btn" href="saghirilab.html">Visit the ACBOS Lab</a>
           <a class="btn" href="#contact">Get in touch</a>
         </div>
@@ -189,7 +204,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
     </div>
 
     <div class="stats">
-      <div class="stat"><b>8</b><span>Books</span></div>
+      <div class="stat"><b>9</b><span>Books</span></div>
       <div class="stat"><b>20</b><span>Journal papers</span></div>
       <div class="stat"><b>25+</b><span>Conference papers</span></div>
       <div class="stat"><b>15+</b><span>Years of research</span></div>
@@ -228,8 +243,22 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
     <div class="head">
       <div class="eyebrow">Books</div>
       <h2>Books</h2>
-      <p>Textbooks, research monographs, and guides for general readers on AI, blockchain, and the future of work. Free sample chapters are available where noted.</p>
+      <p>Technical books, textbooks, research monographs, and guides for general readers on AI, blockchain, Linux automation, and the future of work. Free sample chapters are available where noted.</p>
     </div>
+
+    <article class="feature" id="new-book">
+      <div class="cover" aria-hidden="true"><i>Linux System Automation with n8n</i><small>Apress</small><img src="https://media.springernature.com/w306/springer-static/cover/book/979-8-8688-3210-9.jpg" alt="" onerror="this.remove()"></div>
+      <div>
+        <span class="tag">New book</span>
+        <div class="meta">Apress · Springer Nature · November 2026</div>
+        <h3>Linux System Automation with n8n</h3>
+        <div class="subt">A Low-Code/No-Code Approach for Modern Linux SysAdmin and DevOps</div>
+        <p class="desc">A project-based guide to automating Linux administration with n8n, the open-source low-code platform. Step by step, it builds workflows for monitoring, log review, service recovery, backups, and account management, then combines them into one master automation framework. Written for sysadmins, DevOps engineers, and educators. With Jack Horsky.</p>
+        <div class="actions" style="margin-top:0">
+          <a class="btn primary" href="https://link.springer.com/book/10.1007/979-8-8688-3210-9">View on Springer</a>
+        </div>
+      </div>
+    </article>
 
     <div class="books">
       <article class="book">
@@ -237,7 +266,8 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
         <div>
           <div class="meta"><em>Textbook</em> · Cognella · 2025</div>
           <h3>Blockchain for Beginners: A Project-Based Approach</h3>
-          <p>A hands-on introduction to blockchain that teaches the core concepts through projects. With N. Wang.</p>
+          <p>An accessible introduction for readers with no prior experience: from Bitcoin’s origins and consensus mechanisms to NFTs and DAOs, with hands-on Ethereum projects such as tokens, voting systems, and supply-chain trackers. With Nan Wang.</p>
+          <div class="links"><a href="https://www.researchgate.net/publication/394472522_Blockchain_for_Beginners_A_Project-Based_Approach">ResearchGate</a><a href="https://www.slideshare.net/slideshow/blockchain-for-beginners-a-project-based-approach-book-promotion/284370563">SlideShare</a></div>
         </div>
       </article>
 
@@ -287,7 +317,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
         <div>
           <div class="meta">General audience · Amazon · 2023</div>
           <h3>Why GPT-Based Chatbots Will Be Vital: Applications, Challenges, and the Shaping of the Fragile Job Market</h3>
-          <p>The applications and challenges of GPT-based chatbots, and their effect on the job market.</p>
+          <p>What GPT-based chatbots can do, where they fall short, and how they are reshaping an already fragile job market. Part of <em>The AI Transformation Collection</em>.</p>
           <div class="links">
             <a href="https://a.co/d/gcUOwBL">Amazon</a>
             <a href="https://medium.com/@a.m.saghiri2008/why-gpt-based-chatbots-will-be-vital-a-must-read-book-on-the-future-of-ai-b698bca3a3f">Medium</a>
@@ -310,7 +340,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       </article>
 
       <article class="book">
-        <div class="cover c8" aria-hidden="true"><i>Intelligent Random Walk</i><small>Springer</small></div>
+        <div class="cover c8" aria-hidden="true"><i>Intelligent Random Walk</i><small>Springer</small><img src="https://media.springernature.com/w306/springer-static/cover/book/978-3-030-10883-0.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
         <div>
           <div class="meta"><em>Monograph</em> · SpringerBriefs · 2019</div>
           <h3>Intelligent Random Walk: An Approach Based on Learning Automata</h3>
@@ -320,7 +350,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       </article>
 
       <article class="book">
-        <div class="cover c6" aria-hidden="true"><i>Recent Advances in Learning Automata</i><small>Springer</small></div>
+        <div class="cover c6" aria-hidden="true"><i>Recent Advances in Learning Automata</i><small>Springer</small><img src="https://media.springernature.com/w306/springer-static/cover/book/978-3-319-72428-7.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
         <div>
           <div class="meta"><em>Research volume</em> · Springer · 2018</div>
           <h3>Recent Advances in Learning Automata</h3>
