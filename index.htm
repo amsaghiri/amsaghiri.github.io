@@ -76,10 +76,11 @@ h3{font-size:1.05rem;font-weight:700;line-height:1.35}
 
 /* books */
 .books{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.book{display:grid;grid-template-columns:104px 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
-.cover{height:148px;border-radius:3px 6px 6px 3px;padding:12px 10px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 5px 0 0 rgba(0,0,0,.2),0 6px 14px rgba(15,20,25,.18)}
+.book{display:grid;grid-template-columns:96px 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+.cover{height:152px;border-radius:3px 6px 6px 3px;padding:12px 10px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 5px 0 0 rgba(0,0,0,.2),0 6px 14px rgba(15,20,25,.18)}
 .cover i{font-family:var(--serif);font-style:normal;font-size:.9rem;line-height:1.15;padding-left:4px}
 .cover small{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;padding-left:4px}
+img.cover{width:96px;height:152px;padding:0;object-fit:cover;box-shadow:0 6px 14px rgba(15,20,25,.2);border-radius:3px}
 .c1{background:#2a6b5e}.c2{background:#1e2430}.c3{background:#b44a2d}.c4{background:#35507a}
 .c5{background:#8a3520}.c6{background:#4a5568}.c7{background:#5b4a7a}.c8{background:#16443b}
 .meta{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
@@ -137,7 +138,8 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
 @media (max-width:420px){
   .wrap{padding:0 18px}
   .book{grid-template-columns:84px 1fr;gap:14px;padding:16px}
-  .cover{height:122px}
+  .cover,img.cover{height:133px}
+  img.cover{width:84px}
   .cover i{font-size:.76rem}
   .contact ul{columns:1}
 }
@@ -240,11 +242,11 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       </article>
 
       <article class="book">
-        <div class="cover c2" aria-hidden="true"><i>Exploring the Dark Side of Artificial Intelligence</i><small>A. M. Saghiri</small></div>
+        <img class="cover" src="assets/cover-dark-side-of-ai.jpg" alt="Cover of Exploring the Dark Side of Artificial Intelligence" width="96" height="152" loading="lazy">
         <div>
-          <div class="meta">General audience · Amazon</div>
+          <div class="meta">General audience · Amazon · 2024</div>
           <h3>Exploring the Dark Side of Artificial Intelligence: Shedding Light on Future Perils and Alarming Dangers</h3>
-          <p>A look at the risks and dangers that advancing AI may bring, and why they matter.</p>
+          <p>A tour of AI’s less-discussed risks — from the energy cost of training models to hidden bias — and the ethical, environmental, and social questions they raise.</p>
           <div class="links">
             <a href="https://a.co/d/b1IYTJM">Amazon</a>
             <a href="Exploring%20the%20Dark%20Side%20of%20Artificial%20Intelligence%20-chapter%2001.pdf">Sample chapter (PDF)</a>
@@ -253,11 +255,11 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       </article>
 
       <article class="book">
-        <div class="cover c3" aria-hidden="true"><i>AI Millionaire</i><small>A. M. Saghiri</small></div>
+        <img class="cover" src="assets/cover-ai-millionaire.jpg" alt="Cover of AI Millionaire" width="96" height="152" loading="lazy">
         <div>
-          <div class="meta">General audience · Amazon · 2024</div>
+          <div class="meta">General audience · Amazon · 2023</div>
           <h3>AI Millionaire: A Guide to Forecasting Future Jobs and Hunting Opportunities</h3>
-          <p>A guide to anticipating how AI will reshape jobs and where new opportunities will appear.</p>
+          <p>Maps the specialized careers that AI is creating — safety engineers, copyright analysts, security architects, privacy consultants — and how to prepare for them.</p>
           <div class="links">
             <a href="https://a.co/d/fiRfrnK">Amazon</a>
             <a href="https://medium.com/@a.m.saghiri2008/forget-coding-bootcamps-the-ai-millionaire-path-in-the-age-of-automation-c6241d8e95b5">Medium</a>
@@ -267,11 +269,11 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       </article>
 
       <article class="book">
-        <div class="cover c4" aria-hidden="true"><i>How to Become an Expert in Job Hunting</i><small>A. M. Saghiri</small></div>
+        <img class="cover" src="assets/cover-job-hunting.jpg" alt="Cover of How to Become an Expert in Job Hunting" width="96" height="152" loading="lazy">
         <div>
           <div class="meta">General audience · Amazon · 2024</div>
           <h3>How to Become an Expert in Job Hunting: Harnessing the Power of Generative Chatbots</h3>
-          <p>Practical ways to use generative chatbots throughout the job search.</p>
+          <p>A practical guide to using generative chatbots across the job search, from applications to interviews, without losing your own voice.</p>
           <div class="links">
             <a href="https://a.co/d/bLxaq8S">Amazon</a>
             <a href="https://medium.com/@a.m.saghiri2008/revolutionize-your-job-search-with-ai-discover-the-power-of-chatbots-1b960b7f9be3">Medium</a>
@@ -281,7 +283,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       </article>
 
       <article class="book">
-        <div class="cover c5" aria-hidden="true"><i>Why GPT-Based Chatbots Will Be Vital</i><small>A. M. Saghiri</small></div>
+        <img class="cover" src="assets/cover-gpt-chatbots.jpg" alt="Cover of Why GPT-Based Chatbots Will Be Vital" width="96" height="152" loading="lazy">
         <div>
           <div class="meta">General audience · Amazon · 2023</div>
           <h3>Why GPT-Based Chatbots Will Be Vital: Applications, Challenges, and the Shaping of the Fragile Job Market</h3>
@@ -296,11 +298,11 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       </article>
 
       <article class="book">
-        <div class="cover c7" aria-hidden="true"><i>Brain Digital Twin</i><small>A. M. Saghiri</small></div>
+        <img class="cover" src="assets/cover-brain-digital-twin.jpg" alt="Cover of Brain Digital Twin" width="96" height="152" loading="lazy">
         <div>
-          <div class="meta">General audience</div>
+          <div class="meta">General audience · 2024</div>
           <h3>Brain Digital Twin: One Step Toward Immortality</h3>
-          <p>On digital twins of the human brain and what they could mean for the future.</p>
+          <p>Explores the idea of a digital twin of the human brain through neuroscience, AI, and philosophy, and the ethical questions raised by digital immortality.</p>
           <div class="links">
             <a href="Brain%20Digital%20Twin%20One%20Step%20Toward%20Immortality-%20chapter%201.pdf">Sample chapter (PDF)</a>
           </div>
@@ -310,9 +312,10 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       <article class="book">
         <div class="cover c8" aria-hidden="true"><i>Intelligent Random Walk</i><small>Springer</small></div>
         <div>
-          <div class="meta"><em>Monograph</em> · Springer · 2019</div>
+          <div class="meta"><em>Monograph</em> · SpringerBriefs · 2019</div>
           <h3>Intelligent Random Walk: An Approach Based on Learning Automata</h3>
-          <p>A research monograph on random-walk algorithms guided by learning automata. With M. D. Khomami and M. R. Meybodi.</p>
+          <p>Random-walk algorithms that use learning automata to adapt to their environment, with applications to peer-to-peer and social networks. With M. D. Khomami and M. R. Meybodi.</p>
+          <div class="links"><a href="https://link.springer.com/book/10.1007/978-3-030-10883-0">Springer</a></div>
         </div>
       </article>
 
@@ -321,7 +324,8 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
         <div>
           <div class="meta"><em>Research volume</em> · Springer · 2018</div>
           <h3>Recent Advances in Learning Automata</h3>
-          <p>Studies in Computational Intelligence, Vol. 754. With A. Rezvanian, S. M. Vahidipour, M. Esnaashari, and M. R. Meybodi.</p>
+          <p>Recent theory and applications of learning automata in sensor, peer-to-peer, and social networks (Studies in Computational Intelligence, Vol. 754). With A. Rezvanian, S. M. Vahidipour, M. Esnaashari, and M. R. Meybodi.</p>
+          <div class="links"><a href="https://link.springer.com/book/10.1007/978-3-319-72428-7">Springer</a></div>
         </div>
       </article>
     </div>
