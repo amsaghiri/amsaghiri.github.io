@@ -109,6 +109,13 @@ img.cover{width:96px;height:152px;padding:0;object-fit:cover;box-shadow:0 6px 14
 .labcard h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;margin:8px 0 8px}
 .labcard p{color:var(--slate);font-size:.98rem}
 .labcard .go{display:inline-block;margin-top:14px;font-weight:600;color:var(--accent-deep)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
+.proj .meta em{color:var(--teal)}
+.proj h3{font-size:1.08rem;margin:2px 0 8px}
+.proj p{font-size:.95rem;color:var(--slate);margin-bottom:14px}
+.proj .with{font-size:.88rem;color:var(--muted);margin-bottom:12px}
+.proj .links{margin-top:auto}
 .tl{list-style:none;border-left:2px solid var(--line);padding-left:22px}
 .tl li{position:relative;padding-bottom:22px}
 .tl li:last-child{padding-bottom:0}
@@ -142,6 +149,7 @@ img.cover{width:96px;height:152px;padding:0;object-fit:cover;box-shadow:0 6px 14
 .contact ul li{padding:4px 0}
 footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid #262d36;padding:22px 0;text-align:center}
 
+@media (max-width:1040px){.projects{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:820px){
   .hero{padding:48px 0 44px}
   .hero-grid{grid-template-columns:1fr;gap:28px}
@@ -149,7 +157,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   .stats{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(3){border-left:0}
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
-  .books,.cols,.labs{grid-template-columns:1fr}
+  .books,.cols,.labs,.projects{grid-template-columns:1fr}
   .feature{grid-template-columns:1fr;gap:22px;padding:26px 22px}
   .feature .cover{width:130px;height:185px}
   .cols{gap:38px}
@@ -181,6 +189,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#service">Service</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a class="lab" href="#labs">Labs</a></li>
     </ul>
   </div>
@@ -385,7 +394,58 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   </div>
 </section>
 
-<section id="experience">
+<section id="projects">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Open source</div>
+      <h2>Code &amp; projects</h2>
+      <p>Open repositories from my books, research, teaching, and personal work.</p>
+    </div>
+    <div class="projects">
+      <article class="proj">
+        <div class="meta"><em>Book code</em> · n8n · Linux</div>
+        <h3>Linux System Automation with n8n</h3>
+        <p>The source code that accompanies the book, published in the official Apress repository.</p>
+        <div class="with">With Jack Horsky</div>
+        <div class="links"><a href="https://github.com/Apress/Linux-System-Automation-with-n8n">GitHub</a><a href="n8n-book.html">About the book</a></div>
+      </article>
+      <article class="proj">
+        <div class="meta"><em>Research</em> · Blockchain · Python</div>
+        <h3>Selfish Mining: Simulation and Defense</h3>
+        <p>A simulator for selfish mining attacks on Bitcoin and for a defense that uses learning automata to adapt how forks are resolved.</p>
+        <div class="with">With Ali Nikhalat-Jahromi (original author) and M. R. Meybodi</div>
+        <div class="links"><a href="https://github.com/amsaghiri/SelfishMining">GitHub</a><a href="https://arxiv.org/abs/2301.11463">Paper</a></div>
+      </article>
+      <article class="proj">
+        <div class="meta"><em>Research</em> · Machine learning · Python</div>
+        <h3>Hybrid Learning Automata and Adaptive Dropout</h3>
+        <p>A hybrid of fixed-structure and variable-structure learning automata, with a neural-network framework for dropout experiments.</p>
+        <div class="with">With Saber Gholami</div>
+        <div class="links"><a href="https://github.com/amsaghiri/Adaptive-Dropout-Algorithm">Automata</a><a href="https://github.com/amsaghiri/Adaptive-Dropout-Algorithm2">Dropout experiments</a></div>
+      </article>
+      <article class="proj">
+        <div class="meta"><em>Teaching</em> · Reinforcement learning · Python</div>
+        <h3>Learning Automata</h3>
+        <p>A short, readable learning automaton with a runnable demo, the update rule explained, and experiments for students to try.</p>
+        <div class="links"><a href="https://github.com/amsaghiri/Learning-Automata">GitHub</a></div>
+      </article>
+      <article class="proj">
+        <div class="meta"><em>Teaching</em> · Multi-agent learning · Python</div>
+        <h3>Goore Game and Multi-armed Bandits</h3>
+        <p>Players who cannot see each other still find the best joint decision. Implemented with learning automata and with bandit agents, as scripts and Colab notebooks.</p>
+        <div class="links"><a href="https://github.com/amsaghiri/Goore-Game">Goore Game</a><a href="https://github.com/amsaghiri/Multi-armed-bandit">Bandits</a></div>
+      </article>
+      <article class="proj">
+        <div class="meta"><em>Personal project</em> · DeFi · n8n</div>
+        <h3>Delta-Neutral Radar for n8n</h3>
+        <p>An n8n workflow that reads public market data and evaluates delta-neutral setups against a full cost model. Read-only analytics for research; it places no orders.</p>
+        <div class="links"><a href="https://github.com/amsaghiri/Delta-neutral-strategy-n8n-implementation-">GitHub</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="experience">
   <div class="wrap cols">
     <div>
       <div class="eyebrow">Experience</div>
@@ -431,7 +491,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   </div>
 </section>
 
-<section class="alt" id="publications">
+<section id="publications">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Publications</div>
@@ -450,7 +510,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   </div>
 </section>
 
-<section id="teaching">
+<section class="alt" id="teaching">
   <div class="wrap cols">
     <div>
       <div class="eyebrow">Teaching</div>
@@ -484,7 +544,7 @@ footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid
   </div>
 </section>
 
-<section class="alt" id="service">
+<section id="service">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Service</div>
