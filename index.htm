@@ -1,1720 +1,564 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:w="urn:schemas-microsoft-com:office:word"
-xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
-xmlns="http://www.w3.org/TR/REC-html40">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-		<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Mohammad Saghiri — Assistant Professor of Computer Science</title>
+<meta name="description" content="Homepage of Dr. Ali Mohammad Saghiri, Assistant Professor of Computer Science at William Paterson University. Books, research, publications and teaching in AI, blockchain and distributed systems.">
+<meta name="author" content="Ali Mohammad Saghiri">
+<meta property="og:title" content="Ali Mohammad Saghiri — Assistant Professor of Computer Science">
+<meta property="og:description" content="Books, research, publications and teaching in AI, blockchain and distributed systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amsaghiri.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1419;--paper:#f8f6f1;--cream:#f0ece2;--card:#fffdf9;
+  --accent:#b44a2d;--accent-deep:#8a3520;--teal:#2a6b5e;
+  --slate:#414b5a;--muted:#6b7280;--line:#d9d3c7;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Source Sans 3','Segoe UI',system-ui,sans-serif;
+  --mono:'JetBrains Mono',Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--sans);font-size:17px;line-height:1.65;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
 
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=ProgId content=Word.Document>
-<meta name=Generator content="Microsoft Word 15">
-<meta name=Originator content="Microsoft Word 15">
-<link rel=File-List href="index_files/filelist.xml">
-<link rel=Edit-Time-Data href="index_files/editdata.mso">
-<!--[if !mso]>
-<style>
-v\:* {behavior:url(#default#VML);}
-o\:* {behavior:url(#default#VML);}
-w\:* {behavior:url(#default#VML);}
-.shape {behavior:url(#default#VML);}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(248,246,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:24px;min-height:60px}
+.brand{font-family:var(--serif);font-size:1.25rem;color:var(--ink);white-space:nowrap}
+.brand:hover{text-decoration:none}
+.nav ul{display:flex;gap:22px;list-style:none;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav li a{font-size:.93rem;font-weight:500;color:var(--slate);white-space:nowrap;padding:6px 0;display:block}
+.nav li a:hover{color:var(--accent);text-decoration:none}
+.nav .lab{color:var(--teal);font-weight:600}
+
+/* hero */
+.hero{padding:76px 0 60px}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.5rem,6vw,4rem);line-height:1.05;margin:14px 0 20px;text-wrap:balance}
+.lede{font-size:1.16rem;color:var(--slate);max-width:60ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:11px 22px;border-radius:6px;font-weight:600;font-size:.96rem;border:1.5px solid var(--ink);color:var(--ink);transition:background .15s,color .15s}
+.btn:hover{background:var(--ink);color:var(--paper);text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.portrait{width:190px;height:190px;border-radius:50%;object-fit:cover;border:5px solid var(--card);box-shadow:0 0 0 1px var(--line),0 14px 34px rgba(15,20,25,.14)}
+.profiles{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:28px;font-size:.93rem}
+.profiles a{color:var(--slate);border-bottom:1px solid var(--line)}
+.profiles a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px}
+.stat{padding:22px 8px 20px;text-align:center}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:2.1rem;line-height:1.1}
+.stat span{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* sections */
+section{padding:68px 0}
+section.alt{background:var(--cream)}
+.head{margin-bottom:34px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.6vw,2.4rem);line-height:1.15;margin-top:8px}
+.head p{color:var(--slate);max-width:64ch;margin-top:10px}
+h3{font-size:1.05rem;font-weight:700;line-height:1.35}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.sub{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+
+/* books */
+.books{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.book{display:grid;grid-template-columns:104px 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+.cover{height:148px;border-radius:3px 6px 6px 3px;padding:12px 10px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 5px 0 0 rgba(0,0,0,.2),0 6px 14px rgba(15,20,25,.18)}
+.cover i{font-family:var(--serif);font-style:normal;font-size:.9rem;line-height:1.15;padding-left:4px}
+.cover small{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;padding-left:4px}
+.c1{background:#2a6b5e}.c2{background:#1e2430}.c3{background:#b44a2d}.c4{background:#35507a}
+.c5{background:#8a3520}.c6{background:#4a5568}.c7{background:#5b4a7a}.c8{background:#16443b}
+.meta{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.meta em{font-style:normal;color:var(--accent);font-weight:500}
+.book p{font-size:.95rem;color:var(--slate);margin:6px 0 10px}
+.links{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.9rem;font-weight:600}
+
+/* lists */
+.tl{list-style:none;border-left:2px solid var(--line);padding-left:22px}
+.tl li{position:relative;padding-bottom:22px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-28px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+.alt .tl li::before{background:var(--cream)}
+.tl .when{font-family:var(--mono);font-size:.74rem;color:var(--muted);letter-spacing:.04em}
+.tl p{font-size:.96rem;color:var(--slate)}
+.pubs{list-style:none}
+.pubs li{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.pubs li:first-child{border-top:1px solid var(--line)}
+.pubs .yr{font-family:var(--mono);font-size:.82rem;color:var(--accent);padding-top:3px}
+.pubs p{font-size:.93rem;color:var(--slate)}
+.pubs p i{color:var(--teal);font-style:italic}
+.plain{list-style:none}
+.plain li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.98rem}
+.plain li span{color:var(--muted);font-size:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.chips li{font-size:.88rem;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--slate)}
+.more{margin-top:26px;font-weight:600}
+.block+.block{margin-top:34px}
+
+/* contact */
+.contact{background:var(--ink);color:#e6e2d8}
+.contact h2{color:#fff}
+.contact .eyebrow{color:#e08a6f}
+.contact a{color:#f2b9a6}
+.contact .sub{color:#7cc4b3}
+.contact dl{display:grid;grid-template-columns:90px 1fr;gap:10px 16px;font-size:1rem}
+.contact dt{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#9aa3ad;padding-top:4px}
+.contact ul{list-style:none;columns:2;gap:24px}
+.contact ul li{padding:4px 0}
+footer{background:var(--ink);color:#8b949e;font-size:.85rem;border-top:1px solid #262d36;padding:22px 0;text-align:center}
+
+@media (max-width:820px){
+  .hero{padding:48px 0 44px}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .portrait{width:132px;height:132px;order:-1}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .books,.cols{grid-template-columns:1fr}
+  .cols{gap:38px}
+  section{padding:52px 0}
+  .brand{display:none}
+  .nav ul{margin-left:0}
+}
+@media (max-width:420px){
+  .wrap{padding:0 18px}
+  .book{grid-template-columns:84px 1fr;gap:14px;padding:16px}
+  .cover{height:122px}
+  .cover i{font-size:.76rem}
+  .contact ul{columns:1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
-<![endif]--><!--[if gte mso 9]><xml>
- <o:DocumentProperties>
-  <o:Author>Ali Mohammad Saghiri</o:Author>
-  <o:Template>Normal</o:Template>
-  <o:LastAuthor>am saghiri</o:LastAuthor>
-  <o:Revision>2</o:Revision>
-  <o:TotalTime>8</o:TotalTime>
-  <o:Created>2024-02-14T23:07:00Z</o:Created>
-  <o:LastSaved>2024-02-14T23:07:00Z</o:LastSaved>
-  <o:Pages>1</o:Pages>
-  <o:Words>428</o:Words>
-  <o:Characters>2440</o:Characters>
-  <o:Company>Niroo Research Institute</o:Company>
-  <o:Lines>20</o:Lines>
-  <o:Paragraphs>5</o:Paragraphs>
-  <o:CharactersWithSpaces>2863</o:CharactersWithSpaces>
-  <o:Version>16.00</o:Version>
- </o:DocumentProperties>
- <o:OfficeDocumentSettings>
-  <o:AllowPNG/>
- </o:OfficeDocumentSettings>
-</xml><![endif]-->
-<link rel=themeData href="index_files/themedata.thmx">
-<link rel=colorSchemeMapping href="index_files/colorschememapping.xml">
-<!--[if gte mso 9]><xml>
- <w:WordDocument>
-  <w:SpellingState>Clean</w:SpellingState>
-  <w:GrammarState>Clean</w:GrammarState>
-  <w:TrackMoves>false</w:TrackMoves>
-  <w:TrackFormatting/>
-  <w:PunctuationKerning/>
-  <w:ValidateAgainstSchemas/>
-  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
-  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
-  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
-  <w:DoNotPromoteQF/>
-  <w:LidThemeOther>EN-US</w:LidThemeOther>
-  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
-  <w:LidThemeComplexScript>AR-SA</w:LidThemeComplexScript>
-  <w:Compatibility>
-   <w:BreakWrappedTables/>
-   <w:SnapToGridInCell/>
-   <w:WrapTextWithPunct/>
-   <w:UseAsianBreakRules/>
-   <w:DontGrowAutofit/>
-   <w:SplitPgBreakAndParaMark/>
-   <w:EnableOpenTypeKerning/>
-   <w:DontFlipMirrorIndents/>
-   <w:OverrideTableStyleHps/>
-  </w:Compatibility>
-  <m:mathPr>
-   <m:mathFont m:val="Cambria Math"/>
-   <m:brkBin m:val="before"/>
-   <m:brkBinSub m:val="&#45;-"/>
-   <m:smallFrac m:val="off"/>
-   <m:dispDef/>
-   <m:lMargin m:val="0"/>
-   <m:rMargin m:val="0"/>
-   <m:defJc m:val="centerGroup"/>
-   <m:wrapIndent m:val="1440"/>
-   <m:intLim m:val="subSup"/>
-   <m:naryLim m:val="undOvr"/>
-  </m:mathPr></w:WordDocument>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
-  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
-  LatentStyleCount="376">
-  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 6"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 7"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 8"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 9"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 1"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 2"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 3"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 4"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 5"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 6"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 7"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 8"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 9"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Normal Indent"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="footnote text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="annotation text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="header"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="footer"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index heading"/>
-  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="table of figures"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="envelope address"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="envelope return"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="footnote reference"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="annotation reference"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="line number"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="page number"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="endnote reference"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="endnote text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="table of authorities"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="macro"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="toa heading"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number 5"/>
-  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Closing"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Signature"/>
-  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
-   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text Indent"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Message Header"/>
-  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Salutation"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Date"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text First Indent"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text First Indent 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Note Heading"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text Indent 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text Indent 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Block Text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Hyperlink"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="FollowedHyperlink"/>
-  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
-  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Document Map"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Plain Text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="E-mail Signature"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Top of Form"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Bottom of Form"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Normal (Web)"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Acronym"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Address"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Cite"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Code"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Definition"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Keyboard"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Preformatted"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Sample"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Typewriter"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Variable"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Normal Table"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="annotation subject"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="No List"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Outline List 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Outline List 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Outline List 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Simple 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Simple 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Simple 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Classic 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Classic 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Classic 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Classic 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Colorful 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Colorful 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Colorful 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 6"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 7"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 8"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 6"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 7"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 8"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table 3D effects 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table 3D effects 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table 3D effects 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Contemporary"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Elegant"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Professional"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Subtle 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Subtle 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Web 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Web 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Web 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Balloon Text"/>
-  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Theme"/>
-  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
-  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
-  <w:LsdException Locked="false" Priority="34" QFormat="true"
-   Name="List Paragraph"/>
-  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
-  <w:LsdException Locked="false" Priority="30" QFormat="true"
-   Name="Intense Quote"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
-  <w:LsdException Locked="false" Priority="19" QFormat="true"
-   Name="Subtle Emphasis"/>
-  <w:LsdException Locked="false" Priority="21" QFormat="true"
-   Name="Intense Emphasis"/>
-  <w:LsdException Locked="false" Priority="31" QFormat="true"
-   Name="Subtle Reference"/>
-  <w:LsdException Locked="false" Priority="32" QFormat="true"
-   Name="Intense Reference"/>
-  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
-  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
-   UnhideWhenUsed="true" Name="Bibliography"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
-  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
-  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
-  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
-  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
-  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
-  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
-  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
-  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
-  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 1"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 1"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 1"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 2"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 2"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 2"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 3"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 3"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 3"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 4"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 4"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 4"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 5"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 5"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 5"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 6"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 6"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 6"/>
-  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
-  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
-  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 1"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 1"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 1"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 2"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 2"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 2"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 3"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 3"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 3"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 4"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 4"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 4"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 5"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 5"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 5"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 6"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 6"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 6"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Mention"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Smart Hyperlink"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Hashtag"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Unresolved Mention"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Smart Link"/>
- </w:LatentStyles>
-</xml><![endif]-->
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;
-	mso-font-charset:2;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:0 268435456 0 0 -2147483648 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:swiss;
-	mso-font-pitch:variable;
-	mso-font-signature:-469750017 -1040178053 9 0 511 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:8.0pt;
-	margin-left:0in;
-	line-height:107%;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	mso-ascii-font-family:Calibri;
-	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:Calibri;
-	mso-fareast-theme-font:minor-latin;
-	mso-hansi-font-family:Calibri;
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Arial;
-	mso-bidi-theme-font:minor-bidi;}
-a:link, span.MsoHyperlink
-	{mso-style-priority:99;
-	color:#0563C1;
-	mso-themecolor:hyperlink;
-	text-decoration:underline;
-	text-underline:single;}
-a:visited, span.MsoHyperlinkFollowed
-	{mso-style-noshow:yes;
-	mso-style-priority:99;
-	color:#954F72;
-	mso-themecolor:followedhyperlink;
-	text-decoration:underline;
-	text-underline:single;}
-p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
-	{mso-style-priority:34;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:.25pt;
-	margin-left:.5in;
-	mso-add-space:auto;
-	text-align:justify;
-	text-indent:-.5pt;
-	line-height:112%;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	mso-fareast-font-family:Calibri;
-	color:black;}
-p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
-	{mso-style-priority:34;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-type:export-only;
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:.5in;
-	mso-add-space:auto;
-	text-align:justify;
-	text-indent:-.5pt;
-	line-height:112%;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	mso-fareast-font-family:Calibri;
-	color:black;}
-p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
-	{mso-style-priority:34;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-type:export-only;
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:.5in;
-	mso-add-space:auto;
-	text-align:justify;
-	text-indent:-.5pt;
-	line-height:112%;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	mso-fareast-font-family:Calibri;
-	color:black;}
-p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
-	{mso-style-priority:34;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-type:export-only;
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:.25pt;
-	margin-left:.5in;
-	mso-add-space:auto;
-	text-align:justify;
-	text-indent:-.5pt;
-	line-height:112%;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	mso-fareast-font-family:Calibri;
-	color:black;}
-span.UnresolvedMention1
-	{mso-style-name:"Unresolved Mention1";
-	mso-style-noshow:yes;
-	mso-style-priority:99;
-	color:#605E5C;
-	background:#E1DFDD;}
-span.spelle
-	{mso-style-name:spelle;
-	mso-style-unhide:no;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	mso-ascii-font-family:Calibri;
-	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:Calibri;
-	mso-fareast-theme-font:minor-latin;
-	mso-hansi-font-family:Calibri;
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Arial;
-	mso-bidi-theme-font:minor-bidi;
-	mso-font-kerning:0pt;
-	mso-ligatures:none;}
-.MsoPapDefault
-	{mso-style-type:export-only;
-	margin-bottom:8.0pt;
-	line-height:107%;}
-@page WordSection1
-	{size:8.5in 11.0in;
-	margin:1.0in 1.0in 1.0in 1.0in;
-	mso-header-margin:.5in;
-	mso-footer-margin:.5in;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- @list l0
-	{mso-list-id:16009631;
-	mso-list-type:hybrid;
-	mso-list-template-ids:1594140418 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-@list l0:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l0:level2
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l0:level3
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l0:level4
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l0:level5
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l0:level6
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l0:level7
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l0:level8
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l0:level9
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l1
-	{mso-list-id:861162159;
-	mso-list-type:hybrid;
-	mso-list-template-ids:-1141236618 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-@list l1:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l1:level2
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l1:level3
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l1:level4
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l1:level5
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l1:level6
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l1:level7
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l1:level8
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l1:level9
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l2
-	{mso-list-id:879174469;
-	mso-list-type:hybrid;
-	mso-list-template-ids:101620284 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-@list l2:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l2:level2
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l2:level3
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l2:level4
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l2:level5
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l2:level6
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l2:level7
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l2:level8
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l2:level9
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l3
-	{mso-list-id:975452667;
-	mso-list-type:hybrid;
-	mso-list-template-ids:240161630 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-@list l3:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l3:level2
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l3:level3
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l3:level4
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l3:level5
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l3:level6
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l3:level7
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l3:level8
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l3:level9
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
--->
-</style>
-<!--[if gte mso 10]>
-<style>
- /* Style Definitions */
- table.MsoNormalTable
-	{mso-style-name:"Table Normal";
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-parent:"";
-	mso-padding-alt:0in 5.4pt 0in 5.4pt;
-	mso-para-margin-top:0in;
-	mso-para-margin-right:0in;
-	mso-para-margin-bottom:8.0pt;
-	mso-para-margin-left:0in;
-	line-height:107%;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	mso-ascii-font-family:Calibri;
-	mso-ascii-theme-font:minor-latin;
-	mso-hansi-font-family:Calibri;
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Arial;
-	mso-bidi-theme-font:minor-bidi;}
-table.MsoTableGrid
-	{mso-style-name:"Table Grid";
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	mso-style-priority:39;
-	mso-style-unhide:no;
-	border:solid windowtext 1.0pt;
-	mso-border-alt:solid windowtext .5pt;
-	mso-padding-alt:0in 5.4pt 0in 5.4pt;
-	mso-border-insideh:.5pt solid windowtext;
-	mso-border-insidev:.5pt solid windowtext;
-	mso-para-margin:0in;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	mso-ascii-font-family:Calibri;
-	mso-ascii-theme-font:minor-latin;
-	mso-hansi-font-family:Calibri;
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Arial;
-	mso-bidi-theme-font:minor-bidi;}
-</style>
-<![endif]--><!--[if gte mso 9]><xml>
- <o:shapedefaults v:ext="edit" spidmax="1026"/>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <o:shapelayout v:ext="edit">
-  <o:idmap v:ext="edit" data="1"/>
- </o:shapelayout></xml><![endif]-->
 </head>
+<body>
 
-<body lang=EN-US link="#0563C1" vlink="#954F72" style='tab-interval:.5in;
-word-wrap:break-word'>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Ali M. Saghiri</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="lab" href="saghirilab.html">ACBOS Lab →</a></li>
+    </ul>
+  </div>
+</nav>
 
-<div class=WordSection1>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Assistant Professor of Computer Science · William Paterson University</div>
+        <h1>Ali Mohammad Saghiri</h1>
+        <p class="lede">I work at the intersection of artificial intelligence, blockchain, and distributed systems — building adaptive, decentralized, and intelligent software, and writing books that make these technologies accessible.</p>
+        <div class="actions">
+          <a class="btn primary" href="#books">Explore my books</a>
+          <a class="btn" href="saghirilab.html">Visit the ACBOS Lab</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+        <div class="profiles">
+          <a href="https://scholar.google.com/citations?hl=en&user=CVgzMqUAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/ali-mohammad-saghiri-60bba9a4/">LinkedIn</a>
+          <a href="https://orcid.org/0000-0003-0797-314X">ORCID</a>
+          <a href="https://www.researchgate.net/profile/Ali-Saghiri">ResearchGate</a>
+          <a href="https://dblp.org/pid/148/6931.html">DBLP</a>
+          <a href="https://medium.com/@a.m.saghiri2008">Medium</a>
+        </div>
+      </div>
+      <img class="portrait" src="assets/saghiri.jpg" alt="Portrait of Ali Mohammad Saghiri" width="190" height="190">
+    </div>
 
-<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
- style='border-collapse:collapse;border:none;mso-yfti-tbllook:1184;mso-padding-alt:
- 0in 5.4pt 0in 5.4pt;mso-border-insideh:none;mso-border-insidev:none'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:3.45pt'>
-  <td width=321 valign=top style='width:241.05pt;padding:0in 5.4pt 0in 5.4pt;
-  height:3.45pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=621 valign=top style='width:465.8pt;padding:0in 5.4pt 0in 5.4pt;
-  height:3.45pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  style='font-size:18.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>Welcome
-  to my homepage!<o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1;height:45.65pt'>
-  <td width=321 valign=top style='width:241.05pt;padding:0in 5.4pt 0in 5.4pt;
-  height:45.65pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
-   coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
-   filled="f" stroked="f">
-   <v:stroke joinstyle="miter"/>
-   <v:formulas>
-    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
-    <v:f eqn="sum @0 1 0"/>
-    <v:f eqn="sum 0 0 @1"/>
-    <v:f eqn="prod @2 1 2"/>
-    <v:f eqn="prod @3 21600 pixelWidth"/>
-    <v:f eqn="prod @3 21600 pixelHeight"/>
-    <v:f eqn="sum @0 0 1"/>
-    <v:f eqn="prod @6 1 2"/>
-    <v:f eqn="prod @7 21600 pixelWidth"/>
-    <v:f eqn="sum @8 21600 0"/>
-    <v:f eqn="prod @7 21600 pixelHeight"/>
-    <v:f eqn="sum @10 21600 0"/>
-   </v:formulas>
-   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
-   <o:lock v:ext="edit" aspectratio="t"/>
-  </v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1030" type="#_x0000_t75"
-   style='width:169pt;height:95.5pt;visibility:visible;mso-wrap-style:square'>
-   <v:imagedata src="index_files/image001.jpg" o:title="image002"/>
-  </v:shape><![endif]--><![if !vml]><img width=225 height=127
-  src="index_files/image001.jpg" v:shapes="Picture_x0020_1"><![endif]></span></p>
-  </td>
-  <td width=621 valign=top style='width:465.8pt;padding:0in 5.4pt 0in 5.4pt;
-  height:45.65pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2;height:166.45pt'>
-  <td width=321 valign=top style='width:241.05pt;padding:0in 5.4pt 0in 5.4pt;
-  height:166.45pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_2"
-   o:spid="_x0000_i1029" type="#_x0000_t75" style='width:168.5pt;height:168.5pt;
-   visibility:visible;mso-wrap-style:square'>
-   <v:imagedata src="index_files/image002.jpg" o:title=""/>
-  </v:shape><![endif]--><![if !vml]><img width=225 height=225
-  src="index_files/image002.jpg" v:shapes="Picture_x0020_2"><![endif]></span></p>
-  </td>
-  <td width=621 valign=top style='width:465.8pt;padding:0in 5.4pt 0in 5.4pt;
-  height:166.45pt'>
-  <p class=MsoNormal style='margin-top:0in;margin-right:58.8pt;margin-bottom:
-  0in;margin-left:0in;line-height:normal'><span style='font-size:16.0pt;
-  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>My name is
-  Ali Mohammad Saghiri!<o:p></o:p></span></p>
-  <p class=MsoNormal style='margin-top:0in;margin-right:58.8pt;margin-bottom:
-  0in;margin-left:0in;line-height:normal'><span style='font-size:16.0pt;
-  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p>&nbsp;</o:p></span></p>
-  <p class=MsoNormal style='margin-top:0in;margin-right:58.8pt;margin-bottom:
-  0in;margin-left:0in;line-height:normal'><b><span style='font-size:16.0pt;
-  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>Short Summary<o:p></o:p></span></b></p>
-  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
-  margin-left:.25in;text-align:justify;line-height:normal'><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>I
-  am an Assistant of Professor at William Paterson University with 10 years of
-  experience in various fields including Blockchain, Web 3.0, Artificial Intelligence,
-  Distributed Systems, and Software Engineering. I have a strong publication
-  record, having authored 4 books, 10 book-chapters, 20 journal papers, and 30
-  conference papers. I am also an active reviewer and guest editor for journals
-  and conferences in my field.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3;height:6.6pt'>
-  <td width=321 valign=top style='width:241.05pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=621 valign=top style='width:465.8pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>More
-  information<o:p></o:p></span></b></p>
-  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><a href="https://amsaghiri.github.io/1.htm"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Education</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:Symbol;
-  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:black;
-  text-decoration:none;text-underline:none'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><![endif]><span
-  dir=LTR></span><a href="https://amsaghiri.github.io/2.htm"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Research and Work Experiences</span></a><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;text-decoration:none;text-underline:none'><o:p></o:p></span></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:Symbol;
-  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:black;
-  text-decoration:none;text-underline:none'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><![endif]><span
-  dir=LTR></span><span class=MsoHyperlink><span style='font-size:16.0pt;
-  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;text-decoration:
-  none;text-underline:none'>Books</span></span><span class=MsoHyperlink><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  color:black;text-decoration:none;text-underline:none'><o:p></o:p></span></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-  margin-bottom:0in;margin-left:1.0in;mso-add-space:auto;text-indent:-.25in;
-  line-height:normal;mso-list:l0 level2 lfo2'><![if !supportLists]><span
-  style='font-size:14.0pt;font-family:"Courier New";mso-fareast-font-family:
-  "Courier New"'><span style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span></span><![endif]><span dir=LTR></span><span style='font-size:
-  14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-no-proof:
-  yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_5" o:spid="_x0000_i1028"
-   type="#_x0000_t75" style='width:25.5pt;height:25.5pt;visibility:visible;
-   mso-wrap-style:square'>
-   <v:imagedata src="index_files/image003.gif" o:title="image004"/>
-  </v:shape><![endif]--><![if !vml]><img border=0 width=34 height=34
-  src="index_files/image003.gif" v:shapes="Picture_x0020_5"><![endif]></span><span
-  style='mso-spacerun:yes'> </span><a href="https://a.co/d/b1IYTJM"><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Exploring the Dark Side of
-  Artificial Intelligence: Shedding Light on Future Perils and Alarming Dangers</span></a><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-  margin-bottom:0in;margin-left:1.0in;mso-add-space:auto;text-indent:-.25in;
-  line-height:normal;mso-list:l0 level2 lfo2'><![if !supportLists]><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Courier New";
-  mso-fareast-font-family:"Courier New";color:black;text-decoration:none;
-  text-underline:none'><span style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span></span></span><![endif]><span dir=LTR></span><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_3" o:spid="_x0000_i1027"
-   type="#_x0000_t75" style='width:25.5pt;height:25.5pt;visibility:visible;
-   mso-wrap-style:square'>
-   <v:imagedata src="index_files/image003.gif" o:title="image004"/>
-  </v:shape><![endif]--><![if !vml]><img border=0 width=34 height=34
-  src="index_files/image003.gif" v:shapes="Picture_x0020_3"><![endif]></span><a
-  href="https://a.co/d/fiRfrnK"><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;text-decoration:none;text-underline:none'>AI Millionaire: A Guide
-  to Forecasting Future Jobs and Hunting Opportunities</span></a><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;text-decoration:none;text-underline:none'> </span></span><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;mso-themecolor:text1;text-decoration:none;text-underline:
-  none'>[</span></span><a
-  href="https://medium.com/@a.m.saghiri2008/forget-coding-bootcamps-the-ai-millionaire-path-in-the-age-of-automation-c6241d8e95b5"><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  color:blue;text-decoration:none;text-underline:none'>Medium</span></a><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;mso-themecolor:text1;text-decoration:none;text-underline:
-  none'>]</span></span><span class=MsoHyperlink><span style='font-size:14.0pt;
-  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;color:black;
-  text-decoration:none;text-underline:none'><o:p></o:p></span></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-  margin-bottom:0in;margin-left:1.0in;mso-add-space:auto;text-indent:-.25in;
-  line-height:normal;mso-list:l0 level2 lfo2'><![if !supportLists]><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Courier New";
-  mso-fareast-font-family:"Courier New";text-decoration:none;text-underline:
-  none'><span style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span></span></span><![endif]><span dir=LTR></span><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_4" o:spid="_x0000_i1026"
-   type="#_x0000_t75" style='width:25.5pt;height:25.5pt;visibility:visible;
-   mso-wrap-style:square'>
-   <v:imagedata src="index_files/image003.gif" o:title="image004"/>
-  </v:shape><![endif]--><![if !vml]><img border=0 width=34 height=34
-  src="index_files/image003.gif" v:shapes="Picture_x0020_4"><![endif]></span><span
-  style='mso-spacerun:yes'> </span><a href="https://a.co/d/gcUOwBL"><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Why GPT-Based </span><span
-  class=spelle><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:#0070C0;text-decoration:none;text-underline:none'>Chatbots</span></span><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  color:#0070C0;text-decoration:none;text-underline:none'> </span><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Will Be Vital: Applications,
-  Challenges, and the Shaping of the Fragile Job Market</span></a><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;text-decoration:none;text-underline:none'> </span></span><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;mso-themecolor:text1;text-decoration:none;text-underline:
-  none'>[</span></span><a
-  href="https://medium.com/@a.m.saghiri2008/why-gpt-based-chatbots-will-be-vital-a-must-read-book-on-the-future-of-ai-b698bca3a3f"><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  color:blue;text-decoration:none;text-underline:none'>Medium</span></a><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;mso-themecolor:text1;text-decoration:none;text-underline:
-  none'>, </span></span><a
-  href="https://www.slideshare.net/AliMohammadSaghiri/why-gptbased-chatbots-will-be-vital-applications-challenges-and-the-shaping-of-the-fragile-job-marketbook-promotionpdf-259764445"><span
-  class=spelle><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:blue;text-decoration:none;text-underline:none'>SlideShare</span></span></a><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;mso-themecolor:text1;text-decoration:none;text-underline:
-  none'>]</span></span><span class=MsoHyperlink><span style='font-size:14.0pt;
-  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;text-decoration:
-  none;text-underline:none'><o:p></o:p></span></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
-  margin-bottom:0in;margin-left:1.0in;mso-add-space:auto;text-indent:-.25in;
-  line-height:normal;mso-list:l0 level2 lfo2'><![if !supportLists]><span
-  style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
-  style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span></span><![endif]><span dir=LTR></span><span style='font-size:
-  14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-no-proof:
-  yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_9" o:spid="_x0000_i1025"
-   type="#_x0000_t75" style='width:25.5pt;height:25.5pt;visibility:visible;
-   mso-wrap-style:square'>
-   <v:imagedata src="index_files/image003.gif" o:title="image004"/>
-  </v:shape><![endif]--><![if !vml]><img border=0 width=34 height=34
-  src="index_files/image003.gif" v:shapes="Picture_x0020_9"><![endif]></span><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;text-decoration:none;text-underline:none'><span
-  style='mso-spacerun:yes'> </span></span></span><a
-  href="https://a.co/d/bLxaq8S"><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;text-decoration:none;text-underline:none'>How to Become an Expert
-  In Job Hunting: Harnessing the Power of Generative </span><span class=spelle><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  color:#0070C0;text-decoration:none;text-underline:none'>Chatbots</span></span></a><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;text-decoration:none;text-underline:none'> </span></span><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:windowtext;text-decoration:none;text-underline:none'>[</span></span><a
-  href="https://medium.com/@a.m.saghiri2008/revolutionize-your-job-search-with-ai-discover-the-power-of-chatbots-1b960b7f9be3"><span
-  style='font-size:14.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  color:blue;text-decoration:none;text-underline:none'>Medium</span></a><span
-  class=MsoHyperlink><span style='font-size:14.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:windowtext;text-decoration:none;text-underline:none'>]</span></span><span
-  style='color:windowtext'> </span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><a href="https://amsaghiri.github.io/3.htm"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Publications</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><a href="https://amsaghiri.github.io/4.htm"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Talk and Workshop</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><a href="https://amsaghiri.github.io/5.htm"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Teaching</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><a href="https://amsaghiri.github.io/6.htm"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Reviewer and Organizer for
-  Scientific Journals and Conferences</span></a><span style='font-size:16.0pt;
-  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4;height:6.6pt'>
-  <td width=321 valign=top style='width:241.05pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=621 valign=top style='width:465.8pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>Interest<o:p></o:p></span></b></p>
-  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi'>Artificial Intelligence<o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi'>Computer Networks<o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi'>Distributed Systems<o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi'>Software Engineering<o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi'>Internet of Things<o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo2'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi'>Blockchain<o:p></o:p></span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5;height:6.6pt'>
-  <td width=321 valign=top style='width:241.05pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=621 valign=top style='width:465.8pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>Online
-  Profiles<o:p></o:p></span></b></p>
-  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l1 level1 lfo3'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><a
-  href="https://scholar.google.com/citations?hl=en&amp;user=CVgzMqUAAAAJ&amp;view_op=list_works&amp;sortby=pubdate"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Google Scholar</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l1 level1 lfo3'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><a
-  href="https://www.linkedin.com/in/ali-mohammad-saghiri-60bba9a4/"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>LinkedIn</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l1 level1 lfo3'><![if !supportLists]><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:Symbol;
-  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:black;
-  text-decoration:none;text-underline:none'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><![endif]><span
-  dir=LTR></span><a href="https://orcid.org/0000-0003-0797-314X"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>ORCID</span></a><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;text-decoration:none;text-underline:none'><o:p></o:p></span></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l1 level1 lfo3'><![if !supportLists]><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:Symbol;
-  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:black;
-  text-decoration:none;text-underline:none'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><![endif]><span
-  dir=LTR></span><a href="https://www.researchgate.net/profile/Ali-Saghiri"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>ResearchGate</span></a><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;text-decoration:none;text-underline:none'><o:p></o:p></span></span></p>
-  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l1 level1 lfo3'><![if !supportLists]><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:Symbol;
-  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:black;
-  text-decoration:none;text-underline:none'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><![endif]><span
-  dir=LTR></span><a href="https://www.slideshare.net/AliMohammadSaghiri"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>SlideShare</span></a><span
-  class=MsoHyperlink><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi;color:black;text-decoration:none;text-underline:none'><o:p></o:p></span></span></p>
-  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;mso-add-space:
-  auto;text-indent:-.25in;line-height:normal;mso-list:l1 level1 lfo3'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><a href="https://medium.com/@a.m.saghiri2008"><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
-  text-decoration:none;text-underline:none'>Medium</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes;height:6.6pt'>
-  <td width=321 valign=top style='width:241.05pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=621 valign=top style='width:465.8pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p>&nbsp;</o:p></span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>Contact
-  Information<o:p></o:p></span></b></p>
-  <p class=MsoListParagraph style='margin-bottom:0in;mso-add-space:auto;
-  text-indent:-.25in;line-height:normal;mso-list:l3 level1 lfo4'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi'>Email: </span><a
-  href="file:///D:/Temp1/total/amsaghiriit@gmail.com"><span style='font-size:
-  16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>amsaghiriit@gmail.com</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  </td>
- </tr>
+    <div class="stats">
+      <div class="stat"><b>8</b><span>Books</span></div>
+      <div class="stat"><b>20</b><span>Journal papers</span></div>
+      <div class="stat"><b>25+</b><span>Conference papers</span></div>
+      <div class="stat"><b>15+</b><span>Years of research</span></div>
+    </div>
+  </div>
+</header>
 
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes;height:6.6pt'>
-  <td width=321 valign=top style='width:241.05pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=621 valign=top style='width:465.8pt;padding:0in 5.4pt 0in 5.4pt;
-  height:6.6pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p>&nbsp;</o:p></span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>Lab
-  Information<o:p></o:p></span></b></p>
-  <p class=MsoListParagraph style='margin-bottom:0in;mso-add-space:auto;
-  text-indent:-.25in;line-height:normal;mso-list:l3 level1 lfo4'><![if !supportLists]><span
-  style='font-size:16.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-  mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
-  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-  dir=LTR></span><span style='font-size:16.0pt;font-family:"Times New Roman",serif;
-  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
-  major-bidi'>Lab Website: </span><a
-  href="saghirilab.html"><span style='font-size:
-  16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
-  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'>SaghiriLab</span></a><span
-  style='font-size:16.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
-  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi'><o:p></o:p></span></p>
-  </td>
- </tr>
-	
-</table>
+<section class="alt" id="about">
+  <div class="wrap cols">
+    <div>
+      <div class="eyebrow">About</div>
+      <h2>Research that connects theory and practice</h2>
+      <p style="margin-top:18px;color:var(--slate)">I am an Assistant Professor of Computer Science at William Paterson University in New Jersey and the director of the <a href="saghirilab.html">ACBOS Virtual Research Laboratory</a>. My work bridges theoretical foundations in reinforcement learning and learning automata with practical applications in decentralized systems and autonomous decision-making.</p>
+      <p style="margin-top:14px;color:var(--slate)">Before joining William Paterson in 2023, I held postdoctoral positions at Stevens Institute of Technology and earned my Ph.D. and M.Sc. in Computer Engineering from Amirkabir University of Technology. I also serve as a reviewer and guest editor for journals and conferences in my field.</p>
+    </div>
+    <div>
+      <div class="sub">Research interests</div>
+      <ul class="chips">
+        <li>Artificial Intelligence</li>
+        <li>Blockchain &amp; Web 3.0</li>
+        <li>Cognitive Systems</li>
+        <li>Reinforcement Learning &amp; Learning Automata</li>
+        <li>Distributed Systems</li>
+        <li>Peer-to-Peer Networks</li>
+        <li>Computer Networks</li>
+        <li>Internet of Things</li>
+        <li>Software Engineering</li>
+        <li>Linux &amp; Open-Source Computing</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+<section id="books">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Books</div>
+      <h2>Books</h2>
+      <p>Textbooks, research monographs, and guides for general readers on AI, blockchain, and the future of work. Free sample chapters are available where noted.</p>
+    </div>
 
-</div>
+    <div class="books">
+      <article class="book">
+        <div class="cover c1" aria-hidden="true"><i>Blockchain for Beginners</i><small>Cognella</small></div>
+        <div>
+          <div class="meta"><em>Textbook</em> · Cognella · 2025</div>
+          <h3>Blockchain for Beginners: A Project-Based Approach</h3>
+          <p>A hands-on introduction to blockchain that teaches the core concepts through projects. With N. Wang.</p>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover c2" aria-hidden="true"><i>Exploring the Dark Side of Artificial Intelligence</i><small>A. M. Saghiri</small></div>
+        <div>
+          <div class="meta">General audience · Amazon</div>
+          <h3>Exploring the Dark Side of Artificial Intelligence: Shedding Light on Future Perils and Alarming Dangers</h3>
+          <p>A look at the risks and dangers that advancing AI may bring, and why they matter.</p>
+          <div class="links">
+            <a href="https://a.co/d/b1IYTJM">Amazon</a>
+            <a href="Exploring%20the%20Dark%20Side%20of%20Artificial%20Intelligence%20-chapter%2001.pdf">Sample chapter (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover c3" aria-hidden="true"><i>AI Millionaire</i><small>A. M. Saghiri</small></div>
+        <div>
+          <div class="meta">General audience · Amazon · 2024</div>
+          <h3>AI Millionaire: A Guide to Forecasting Future Jobs and Hunting Opportunities</h3>
+          <p>A guide to anticipating how AI will reshape jobs and where new opportunities will appear.</p>
+          <div class="links">
+            <a href="https://a.co/d/fiRfrnK">Amazon</a>
+            <a href="https://medium.com/@a.m.saghiri2008/forget-coding-bootcamps-the-ai-millionaire-path-in-the-age-of-automation-c6241d8e95b5">Medium</a>
+            <a href="AI%20Millionaire%20A%20Guide%20to%20Forecasting%20Future%20Jobs%20and%20Hunting%20Opportunities-%20chapter%2001.pdf">Sample chapter (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover c4" aria-hidden="true"><i>How to Become an Expert in Job Hunting</i><small>A. M. Saghiri</small></div>
+        <div>
+          <div class="meta">General audience · Amazon · 2024</div>
+          <h3>How to Become an Expert in Job Hunting: Harnessing the Power of Generative Chatbots</h3>
+          <p>Practical ways to use generative chatbots throughout the job search.</p>
+          <div class="links">
+            <a href="https://a.co/d/bLxaq8S">Amazon</a>
+            <a href="https://medium.com/@a.m.saghiri2008/revolutionize-your-job-search-with-ai-discover-the-power-of-chatbots-1b960b7f9be3">Medium</a>
+            <a href="How%20to%20Become%20an%20Expert%20In%20Job%20Hunting%20Harnessing%20the%20Power%20of%20Generative%20Chatbots-%20chapter%2001.pdf">Sample chapter (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover c5" aria-hidden="true"><i>Why GPT-Based Chatbots Will Be Vital</i><small>A. M. Saghiri</small></div>
+        <div>
+          <div class="meta">General audience · Amazon · 2023</div>
+          <h3>Why GPT-Based Chatbots Will Be Vital: Applications, Challenges, and the Shaping of the Fragile Job Market</h3>
+          <p>The applications and challenges of GPT-based chatbots, and their effect on the job market.</p>
+          <div class="links">
+            <a href="https://a.co/d/gcUOwBL">Amazon</a>
+            <a href="https://medium.com/@a.m.saghiri2008/why-gpt-based-chatbots-will-be-vital-a-must-read-book-on-the-future-of-ai-b698bca3a3f">Medium</a>
+            <a href="https://www.slideshare.net/AliMohammadSaghiri/why-gptbased-chatbots-will-be-vital-applications-challenges-and-the-shaping-of-the-fragile-job-marketbook-promotionpdf-259764445">SlideShare</a>
+            <a href="Why%20GPT-Based%20Chatbots%20Will%20Be%20Vital%20Applications,%20Challenges,%20and%20the%20Shaping%20of%20the%20Fragile%20Job%20Market%20chapter%201.pdf">Sample chapter (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover c7" aria-hidden="true"><i>Brain Digital Twin</i><small>A. M. Saghiri</small></div>
+        <div>
+          <div class="meta">General audience</div>
+          <h3>Brain Digital Twin: One Step Toward Immortality</h3>
+          <p>On digital twins of the human brain and what they could mean for the future.</p>
+          <div class="links">
+            <a href="Brain%20Digital%20Twin%20One%20Step%20Toward%20Immortality-%20chapter%201.pdf">Sample chapter (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover c8" aria-hidden="true"><i>Intelligent Random Walk</i><small>Springer</small></div>
+        <div>
+          <div class="meta"><em>Monograph</em> · Springer · 2019</div>
+          <h3>Intelligent Random Walk: An Approach Based on Learning Automata</h3>
+          <p>A research monograph on random-walk algorithms guided by learning automata. With M. D. Khomami and M. R. Meybodi.</p>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover c6" aria-hidden="true"><i>Recent Advances in Learning Automata</i><small>Springer</small></div>
+        <div>
+          <div class="meta"><em>Research volume</em> · Springer · 2018</div>
+          <h3>Recent Advances in Learning Automata</h3>
+          <p>Studies in Computational Intelligence, Vol. 754. With A. Rezvanian, S. M. Vahidipour, M. Esnaashari, and M. R. Meybodi.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="experience">
+  <div class="wrap cols">
+    <div>
+      <div class="eyebrow">Experience</div>
+      <h2>Research &amp; work</h2>
+      <ul class="tl" style="margin-top:28px">
+        <li>
+          <div class="when">2023 – Present</div>
+          <h3>Assistant Professor, Computer Science</h3>
+          <p>William Paterson University, Wayne, NJ</p>
+        </li>
+        <li>
+          <div class="when">2022 – 2023</div>
+          <h3>Postdoctoral Researcher</h3>
+          <p>Stevens Institute of Technology — blockchain-based budget management systems, Central Bank Digital Currencies, and a parking-sharing application.</p>
+        </li>
+        <li>
+          <div class="when">2022 – Present</div>
+          <h3>Consultant</h3>
+          <p>Rutgers School of Dental Medicine — applications of digital twins and artificial intelligence in dentistry.</p>
+        </li>
+        <li>
+          <div class="when">2019 – 2022</div>
+          <h3>Visiting Professor</h3>
+          <p>Mazandaran University of Science and Technology — operating systems and computer networks.</p>
+        </li>
+        <li>
+          <div class="when">2018 – 2020</div>
+          <h3>Researcher</h3>
+          <p>IoT Research Center, Amirkabir University of Technology — a general-purpose platform for IoT-based applications.</p>
+        </li>
+        <li>
+          <h3>Graduate Assistant</h3>
+          <p>Amirkabir University of Technology — novel dynamic models of cellular learning automata; peer-to-peer networks, reinforcement learning, distributed search engines, and parallel algorithms.</p>
+        </li>
+        <li>
+          <h3>Visiting Professor</h3>
+          <p>Azad University, Tehran (North and Shahre-Rey branches) — taught AI, databases, software engineering, and theory of automata; supervised student theses.</p>
+        </li>
+      </ul>
+    </div>
+    <div id="education">
+      <div class="eyebrow">Education</div>
+      <h2>Education</h2>
+      <ul class="tl" style="margin-top:28px">
+        <li>
+          <div class="when">2010 – 2017</div>
+          <h3>Ph.D. in Computer Engineering — Artificial Intelligence</h3>
+          <p>Amirkabir University of Technology<br>Thesis: “Cellular Learning Automata and their applications to Peer-to-Peer Networks”</p>
+        </li>
+        <li>
+          <div class="when">2007 – 2010</div>
+          <h3>M.Sc. in Computer Engineering — Software Engineering</h3>
+          <p>Amirkabir University of Technology<br>Thesis: “Personalized Information Retrieval in Peer-to-Peer Systems Considering user profile and source similarity”</p>
+        </li>
+        <li>
+          <h3>B.Sc. in Computer Engineering — Software Engineering</h3>
+          <p>University of Science and Culture<br>Project: “Peer-to-Peer Digital Library Implementation using JAVA”</p>
+        </li>
+      </ul>
+
+      <div class="block" style="margin-top:38px">
+        <div class="sub">Awards</div>
+        <ul class="plain">
+          <li>Best Paper Award, International Conference on Web Research (ICWR), 2018</li>
+          <li>Full Ph.D. scholarship, Amirkabir University of Technology</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Publications</div>
+      <h2>Selected recent publications</h2>
+      <p>A selection of recent journal papers. The complete list of books, book chapters, journal papers, and conference papers is on the lab site.</p>
+    </div>
+    <ul class="pubs">
+      <li><span class="yr">2025</span><div><h3>Asymmetric Variable Depth Learning Automaton and Its Application in Defending Against Selfish Mining Attacks on Bitcoin</h3><p>A. Nikhalat-Jahromi, A. M. Saghiri, M. R. Meybodi · <i>Applied Soft Computing</i>, Vol. 170</p></div></li>
+      <li><span class="yr">2025</span><div><h3>Cellular Goore Game with Multiple Learning Automata in Each Cell and Its Applications</h3><p>M. M. Daliri Khomami, A. M. Saghiri, M. R. Meybodi · <i>The Journal of Supercomputing</i>, 81(7)</p></div></li>
+      <li><span class="yr">2024</span><div><h3>A Bibliometric Analysis of Quantum Machine Learning Research</h3><p>A. Ahmadikia, A. Shirzad, A. M. Saghiri · <i>Science &amp; Technology Libraries</i></p></div></li>
+      <li><span class="yr">2024</span><div><h3>CaAIS: Cellular Automata-Based Artificial Immune System for Dynamic Environments</h3><p>A. Rezvanian, S. M. Vahidipour, A. M. Saghiri · <i>Algorithms</i>, 17(1)</p></div></li>
+      <li><span class="yr">2023</span><div><h3>A Literature Review of Energy Optimal Adaptive Cruise Control Algorithms</h3><p>S. Vasebi, Y. M. Hayeri, A. M. Saghiri · <i>IEEE Access</i>, Vol. 11, pp. 13636–13646</p></div></li>
+      <li><span class="yr">2022</span><div><h3>A Survey of Artificial Intelligence Challenges: Analyzing the Definitions, Relationships, and Evolutions</h3><p>A. M. Saghiri, M. R. Jabbarpour, M. Vahidipour, M. Sookhak, A. Forestiero · <i>Applied Sciences</i>, 12, pp. 40–54</p></div></li>
+    </ul>
+    <p class="more"><a href="saghirilab.html#publications">Full publication list →</a> &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?hl=en&user=CVgzMqUAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar →</a></p>
+  </div>
+</section>
+
+<section class="alt" id="teaching">
+  <div class="wrap cols">
+    <div>
+      <div class="eyebrow">Teaching</div>
+      <h2>Courses</h2>
+      <div class="block" style="margin-top:26px">
+        <div class="sub">William Paterson University</div>
+        <ul class="plain">
+          <li>Computer and Information Technology</li>
+          <li>Computer Networks II</li>
+          <li>Discrete Mathematics</li>
+          <li>System Administration</li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="sub">Previous institutions</div>
+        <ul class="plain">
+          <li>Operating Systems; Computer Networks <span>— Mazandaran Univ. of Science and Technology</span></li>
+          <li>Artificial Intelligence; Database; Software Engineering; Theory of Automata <span>— Azad University, Tehran</span></li>
+          <li>Fundamentals of Computers and Programming; Database Laboratory <span>— Amirkabir University of Technology</span></li>
+          <li>Algorithms <span>— University of Science and Culture</span></li>
+          <li>Fundamentals of Internet of Things <span>— Sadra University</span></li>
+        </ul>
+      </div>
+    </div>
+    <div id="talks">
+      <div class="eyebrow">Talks</div>
+      <h2>Talks &amp; workshops</h2>
+      <ul class="tl" style="margin-top:28px">
+        <li>
+          <div class="when">2024</div>
+          <h3>Why Chatbots Will Be Vital in the Future of Education?</h3>
+          <p>Cengage</p>
+        </li>
+        <li>
+          <div class="when">Fall 2022</div>
+          <h3>Central Bank Digital Currencies based on Blockchain and Graph Analyses</h3>
+          <p>Stevens Institute of Technology</p>
+        </li>
+        <li>
+          <div class="when">Spring 2021</div>
+          <h3>Internet of Things</h3>
+          <p>Sharif University</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Service</div>
+      <h2>Professional activities</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <div class="block">
+          <div class="sub">Editorial roles</div>
+          <ul class="plain">
+            <li>Guest Editor — Applied Sciences (MDPI)</li>
+            <li>Guest Editor — Mathematical Biosciences and Engineering</li>
+            <li>Editorial Board — International Journal of Advances in Applied Sciences</li>
+          </ul>
+        </div>
+        <div class="block">
+          <div class="sub">Organizer</div>
+          <ul class="plain">
+            <li>Scientific Chair, International Memorial Conference Dr. Hajar Afsar Lajevardi (DHAL 2016, DHAL 2017)</li>
+            <li>Director and Executive Committee Member, Dr. Hajar Afsar Lajevardi Memorial Foundation</li>
+            <li>Scientific Committee, 4th Int’l Conference on Knowledge-Based Engineering and Innovation (KBEI 2017)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="sub">Journal reviewer</div>
+        <ul class="chips">
+          <li>IEEE Systems Journal</li>
+          <li>IEEE Access</li>
+          <li>IEEE Internet of Things</li>
+          <li>IEEE Trans. on Information Forensics and Security</li>
+          <li>IEEE Trans. on Computational Social Systems</li>
+          <li>Trans. on Emerging Telecommunications Technologies</li>
+          <li>Journal of Computational Science</li>
+          <li>Artificial Intelligence Review</li>
+          <li>The Journal of Supercomputing</li>
+          <li>Advanced Engineering Informatics</li>
+          <li>Personal and Ubiquitous Computing</li>
+          <li>Wireless Personal Communications</li>
+          <li>Int’l Journal of Communication Systems</li>
+          <li>Peer-to-Peer Networking and Applications</li>
+          <li>Journal of High Speed Networks</li>
+          <li>Microprocessors and Microsystems</li>
+          <li>Cogent Engineering</li>
+          <li>Applied Sciences</li>
+          <li>AppliedMath</li>
+          <li>Electronics</li>
+          <li>Entropy</li>
+          <li>Mathematics</li>
+          <li>Sensors</li>
+          <li>Sustainability</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap cols">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h2>Get in touch</h2>
+      <p style="margin:16px 0 26px;color:#b9c0c8;max-width:46ch">I welcome inquiries about research collaboration, guest lectures, thesis supervision, and joint publications.</p>
+      <dl>
+        <dt>Email</dt><dd><a href="mailto:saghiria@wpunj.edu">saghiria@wpunj.edu</a><br><a href="mailto:amsaghiriit@gmail.com">amsaghiriit@gmail.com</a></dd>
+        <dt>Office</dt><dd>Department of Computer Science<br>William Paterson University<br>300 Pompton Road, Wayne, NJ 07470</dd>
+        <dt>Lab</dt><dd><a href="saghirilab.html">ACBOS Virtual Research Laboratory</a></dd>
+      </dl>
+    </div>
+    <div>
+      <div class="sub">Online profiles</div>
+      <ul>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=CVgzMqUAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/ali-mohammad-saghiri-60bba9a4/">LinkedIn</a></li>
+        <li><a href="https://orcid.org/0000-0003-0797-314X">ORCID</a></li>
+        <li><a href="https://www.researchgate.net/profile/Ali-Saghiri">ResearchGate</a></li>
+        <li><a href="https://dblp.org/pid/148/6931.html">DBLP</a></li>
+        <li><a href="https://ieeexplore.ieee.org/author/37396242500">IEEE Xplore</a></li>
+        <li><a href="https://dl.acm.org/profile/99658988674">ACM Digital Library</a></li>
+        <li><a href="https://wpconnect.wpunj.edu/directories/faculty/default.cfm?user=saghiria">WPU Faculty Page</a></li>
+        <li><a href="https://www.slideshare.net/AliMohammadSaghiri">SlideShare</a></li>
+        <li><a href="https://medium.com/@a.m.saghiri2008">Medium</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Ali Mohammad Saghiri · William Paterson University · Department of Computer Science</div>
+</footer>
 
 </body>
-
 </html>
-
-
-
