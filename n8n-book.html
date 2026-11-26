@@ -20,6 +20,7 @@
   --ink:#0f1419;--paper:#f8f6f1;--cream:#f0ece2;--card:#fffdf9;
   --accent:#b44a2d;--accent-deep:#8a3520;--teal:#2a6b5e;
   --slate:#414b5a;--muted:#6b7280;--line:#d9d3c7;
+  --panel:#0f1419;--navbg:rgba(248,246,241,.94);--solid:#b44a2d;--solid-deep:#8a3520;--text2:#232a33;
   --serif:'DM Serif Display',Georgia,serif;
   --sans:'Source Sans 3','Segoe UI',system-ui,sans-serif;
   --mono:'JetBrains Mono',Consolas,monospace;
@@ -37,25 +38,25 @@ a:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4
 .nav a.back{font-size:.93rem;font-weight:500;color:var(--slate);text-decoration:none}
 .nav a.back:hover{color:var(--accent)}
 
-.hero{background:var(--ink);color:#e6e2d8;padding:64px 0}
+.hero{background:var(--panel);color:#e6e2d8;padding:64px 0}
 .hero-grid{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center}
-.cover{position:relative;overflow:hidden;width:220px;height:314px;border-radius:3px 8px 8px 3px;background:var(--teal);color:#fff;padding:20px 16px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 6px 0 0 rgba(0,0,0,.2),0 18px 40px rgba(0,0,0,.5)}
+.cover{position:relative;overflow:hidden;width:220px;height:314px;border-radius:3px 8px 8px 3px;background:#2a6b5e;color:#fff;padding:20px 16px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 6px 0 0 rgba(0,0,0,.2),0 18px 40px rgba(0,0,0,.5)}
 .cover i{font-family:var(--serif);font-style:normal;font-size:1.6rem;line-height:1.15}
 .cover small{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
 .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tag{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:var(--accent);color:#fff;padding:4px 10px;border-radius:3px}
+.tag{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:var(--solid);color:#fff;padding:4px 10px;border-radius:3px}
 h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.08;color:#fff;margin:16px 0 10px;text-wrap:balance}
 .subt{font-size:1.2rem;color:#c9cfd6}
 .by{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:#9aa3ad;margin-top:16px}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{display:inline-block;padding:11px 22px;border-radius:6px;font-weight:600;font-size:.96rem;border:1.5px solid #e6e2d8;color:#e6e2d8;text-decoration:none;transition:background .15s,color .15s}
 .btn:hover{background:#e6e2d8;color:var(--ink)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn.primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.btn.primary{background:var(--solid);border-color:var(--solid);color:#fff}
+.btn.primary:hover{background:var(--solid-deep);border-color:var(--solid-deep);color:#fff}
 
 article{padding:60px 0 20px}
 .date{font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-article p{margin-bottom:20px;color:#232a33}
+article p{margin-bottom:20px;color:var(--text2)}
 article p.lead{font-size:1.22rem;color:var(--ink)}
 h2{font-family:var(--serif);font-weight:400;font-size:1.75rem;line-height:1.2;margin:38px 0 16px}
 article ul{margin:0 0 22px 0;list-style:none}
@@ -73,9 +74,9 @@ article li b{font-weight:600}
 .cta .actions{margin-top:16px}
 .cta .btn{border-color:var(--ink);color:var(--ink)}
 .cta .btn:hover{background:var(--ink);color:var(--paper)}
-.cta .btn.primary{border-color:var(--accent);color:#fff}
+.cta .btn.primary{border-color:var(--solid);color:#fff}
 
-footer{background:var(--ink);color:#8b949e;font-size:.85rem;padding:22px 0;text-align:center}
+footer{background:var(--panel);color:#8b949e;font-size:.85rem;padding:22px 0;text-align:center}
 footer a{color:#c9cfd6}
 
 @media (max-width:760px){
@@ -88,7 +89,16 @@ footer a{color:#c9cfd6}
   .facts dd{margin-bottom:10px}
   .facts,.cta{padding:22px 20px}
 }
+.theme-toggle{background:none;border:1px solid var(--line);color:var(--slate);border-radius:999px;width:32px;height:32px;cursor:pointer;padding:0;flex:none;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle}
+.theme-toggle:hover{color:var(--accent);border-color:var(--accent)}
+.theme-toggle:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.nav .wrap{gap:14px}.nav .back{margin-left:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#ece8de;--paper:#10141b;--cream:#151a23;--card:#1a202b;--accent:#e0714f;--accent-deep:#f09a7c;--teal:#63b8a6;--slate:#b4bcc8;--muted:#8a94a2;--panel:#0a0d12;--navbg:rgba(16,20,27,.92);--text2:#c9cfd6;--line:#2a3340;}}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#ece8de;--paper:#10141b;--cream:#151a23;--card:#1a202b;--accent:#e0714f;--accent-deep:#f09a7c;--teal:#63b8a6;--slate:#b4bcc8;--muted:#8a94a2;--panel:#0a0d12;--navbg:rgba(16,20,27,.92);--text2:#c9cfd6;--line:#2a3340;}
+:root[data-theme="dark"] .hero{border-bottom:1px solid var(--line)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{border-bottom:1px solid var(--line)}}
 </style>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 </head>
 <body>
 
@@ -96,6 +106,7 @@ footer a{color:#c9cfd6}
   <div class="wrap">
     <a class="brand" href="index.htm">Ali M. Saghiri</a>
     <a class="back" href="index.htm#books">← All books</a>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme" title="Light / dark"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg></button>
   </div>
 </nav>
 
@@ -172,5 +183,17 @@ footer a{color:#c9cfd6}
   <div class="wrap">© 2026 Ali Mohammad Saghiri · <a href="index.htm">Home</a> · <a href="saghirilab.html">ACBOS Lab</a></div>
 </footer>
 
+<script>
+(function(){
+  var b=document.getElementById("themeToggle"); if(!b) return;
+  b.addEventListener("click",function(){
+    var r=document.documentElement, cur=r.getAttribute("data-theme");
+    if(!cur) cur=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+    var next=cur==="dark"?"light":"dark";
+    r.setAttribute("data-theme",next);
+    try{localStorage.setItem("theme",next)}catch(e){}
+  });
+})();
+</script>
 </body>
 </html>

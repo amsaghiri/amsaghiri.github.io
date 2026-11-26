@@ -11,12 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root{--ink:#0f1419;--paper:#f8f6f1;--cream:#f0ece2;--warm:#e8e0d0;--accent:#b44a2d;--accent-deep:#8a3520;--teal:#2a6b5e;--teal-light:#3a8b7a;--slate:#4a5568;--muted:#6b7280;--light-line:#d4cfc5;--code-bg:#1e2430;--code-fg:#c5cdd9;--serif:'DM Serif Display',Georgia,serif;--sans:'Source Sans 3','Segoe UI',sans-serif;--mono:'JetBrains Mono','Consolas',monospace}
+        :root{--card:#fff;--panel:#0f1419;--navbg:rgba(248,246,241,0.92);--ink:#0f1419;--paper:#f8f6f1;--cream:#f0ece2;--warm:#e8e0d0;--accent:#b44a2d;--accent-deep:#8a3520;--teal:#2a6b5e;--teal-light:#3a8b7a;--slate:#4a5568;--muted:#6b7280;--light-line:#d4cfc5;--code-bg:#1e2430;--code-fg:#c5cdd9;--serif:'DM Serif Display',Georgia,serif;--sans:'Source Sans 3','Segoe UI',sans-serif;--mono:'JetBrains Mono','Consolas',monospace}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;font-size:17px}
         body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
         .pixel-art{image-rendering:pixelated;image-rendering:-moz-crisp-edges;image-rendering:crisp-edges}
-        nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(248,246,241,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--light-line);transition:box-shadow .3s}
+        nav{position:fixed;top:0;width:100%;z-index:100;background:var(--navbg);backdrop-filter:blur(12px);border-bottom:1px solid var(--light-line);transition:box-shadow .3s}
         nav.scrolled{box-shadow:0 2px 20px rgba(15,20,25,0.06)}
         .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:64px}
         .nav-logo{font-family:var(--mono);font-size:.85rem;font-weight:500;letter-spacing:.12em;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:.6rem}
@@ -65,7 +65,7 @@
         .detail-block li{padding:.25rem 0;padding-left:1.2rem;position:relative}
         .detail-block li::before{content:'■';position:absolute;left:0;color:var(--teal);font-size:.5rem;top:.55rem}
         .research-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-        .research-card{background:white;border:1px solid var(--light-line);padding:2.2rem 2rem;transition:all .3s ease;position:relative;overflow:hidden}
+        .research-card{background:var(--card);border:1px solid var(--light-line);padding:2.2rem 2rem;transition:all .3s ease;position:relative;overflow:hidden}
         .research-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
         .research-card:hover::before{transform:scaleX(1)}
         .research-card:hover{box-shadow:0 8px 30px rgba(15,20,25,.06);transform:translateY(-2px)}
@@ -86,7 +86,7 @@
         .pub-tag{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:.12rem .5rem;border:1px solid var(--light-line);color:var(--muted);margin-top:.3rem;letter-spacing:.05em}
         .pub-count{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-left:.4rem;font-weight:400}
         .teaching-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-        .teaching-card{background:white;border:1px solid var(--light-line);padding:1.5rem}
+        .teaching-card{background:var(--card);border:1px solid var(--light-line);padding:1.5rem}
         .teaching-card h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
         .teaching-card ul{list-style:none}
         .teaching-card li{padding:.2rem 0;padding-left:1rem;position:relative;font-size:.88rem;color:var(--slate)}
@@ -95,7 +95,7 @@
         .lab-intro{max-width:720px;margin-bottom:3.5rem}
         .lab-intro p{color:var(--slate);line-height:1.85;margin-bottom:1rem}
         .lab-tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:3.5rem}
-        .lab-track{background:white;border:1px solid var(--light-line);padding:2rem;position:relative}
+        .lab-track{background:var(--card);border:1px solid var(--light-line);padding:2rem;position:relative}
         .lab-track-number{font-family:var(--mono);font-size:3rem;color:rgba(180,74,45,.08);position:absolute;top:.8rem;right:1.2rem;font-weight:500}
         .lab-track h3{font-family:var(--serif);font-size:1.15rem;margin-bottom:.6rem;color:var(--ink)}
         .lab-track p{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
@@ -109,10 +109,10 @@
         .lab-how-steps li::before{content:counter(steps,decimal-leading-zero);font-family:var(--mono);font-size:.75rem;color:var(--accent);position:absolute;left:0;top:.8rem}
         .lab-email-highlight{color:var(--teal-light);font-family:var(--mono);font-size:.9rem}
         .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
-        .tool-item{padding:1.6rem;border:1px solid var(--light-line);background:white}
+        .tool-item{padding:1.6rem;border:1px solid var(--light-line);background:var(--card)}
         .tool-item h4{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
         .tool-item p{font-size:.86rem;color:var(--muted);line-height:1.7}
-        .contact-section{background:var(--ink);color:white;position:relative;overflow:hidden}
+        .contact-section{background:var(--panel);color:white;position:relative;overflow:hidden}
         .contact-section::after{content:'';position:absolute;bottom:0;right:0;width:300px;height:300px;opacity:.03;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:8px 8px}
         .contact-section .section-label{color:var(--teal-light)}
         .contact-section .section-title{color:white}
@@ -129,7 +129,7 @@
         .contact-link-list a:hover{color:white}
         .contact-link-list .link-arrow{font-size:.8rem;transition:transform .2s}
         .contact-link-list a:hover .link-arrow{transform:translateX(3px)}
-        footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:2rem;text-align:center}
+        footer{background:var(--panel);border-top:1px solid rgba(255,255,255,.06);padding:2rem;text-align:center}
         footer p{font-size:.75rem;color:rgba(255,255,255,.3);font-family:var(--mono);letter-spacing:.05em}
         @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
         @keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.2)}}
@@ -139,7 +139,16 @@
         a.inline-link:hover{color:var(--accent)}
         @media(max-width:900px){.about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}}
         @media(max-width:680px){html{font-size:15px}section{padding:3.5rem 1.2rem}.nav-links{display:none}.mobile-toggle{display:block}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--light-line);padding:1.5rem 2rem;gap:1rem}.hero-meta{gap:1.5rem}.research-grid,.lab-tracks,.teaching-grid{grid-template-columns:1fr}.lab-how{padding:2rem 1.5rem}.pub-tabs{gap:0}.pub-tab{padding:.5rem .7rem;font-size:.7rem}.pixel-deco{display:none}}
-    </style>
+    .theme-toggle{background:none;border:1px solid var(--light-line);color:var(--slate);border-radius:999px;width:32px;height:32px;cursor:pointer;padding:0;flex:none;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle}
+.theme-toggle:hover{color:var(--accent);border-color:var(--accent)}
+.theme-toggle:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.nav-links{align-items:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#ece8de;--paper:#10141b;--cream:#151a23;--card:#1a202b;--accent:#e0714f;--accent-deep:#f09a7c;--teal:#63b8a6;--slate:#b4bcc8;--muted:#8a94a2;--panel:#0a0d12;--navbg:rgba(16,20,27,.92);--text2:#c9cfd6;--warm:#1c222d;--teal-light:#63b8a6;--light-line:#2a3340;--code-bg:#0a0d12;--code-fg:#c5cdd9;}}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#ece8de;--paper:#10141b;--cream:#151a23;--card:#1a202b;--accent:#e0714f;--accent-deep:#f09a7c;--teal:#63b8a6;--slate:#b4bcc8;--muted:#8a94a2;--panel:#0a0d12;--navbg:rgba(16,20,27,.92);--text2:#c9cfd6;--warm:#1c222d;--teal-light:#63b8a6;--light-line:#2a3340;--code-bg:#0a0d12;--code-fg:#c5cdd9;}
+:root[data-theme="dark"] svg [fill="#0f1419"]{fill:#ece8de}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) svg [fill="#0f1419"]{fill:#ece8de}}
+</style>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 </head>
 <body>
 
@@ -147,7 +156,7 @@
 <a href="#" class="nav-logo">
 <svg class="pixel-art" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="0" width="4" height="4" fill="#b44a2d"/><rect x="8" y="0" width="4" height="4" fill="#2a6b5e"/><rect x="12" y="0" width="4" height="4" fill="#b44a2d"/><rect x="16" y="0" width="4" height="4" fill="#2a6b5e"/><rect x="0" y="4" width="4" height="4" fill="#2a6b5e"/><rect x="4" y="4" width="4" height="4" fill="#b44a2d"/><rect x="12" y="4" width="4" height="4" fill="#2a6b5e"/><rect x="20" y="4" width="4" height="4" fill="#b44a2d"/><rect x="0" y="8" width="4" height="4" fill="#b44a2d"/><rect x="8" y="8" width="8" height="4" fill="#0f1419"/><rect x="20" y="8" width="4" height="4" fill="#2a6b5e"/><rect x="0" y="12" width="4" height="4" fill="#2a6b5e"/><rect x="8" y="12" width="8" height="4" fill="#0f1419"/><rect x="20" y="12" width="4" height="4" fill="#b44a2d"/><rect x="4" y="16" width="4" height="4" fill="#2a6b5e"/><rect x="12" y="16" width="4" height="4" fill="#b44a2d"/><rect x="16" y="16" width="4" height="4" fill="#2a6b5e"/><rect x="8" y="20" width="4" height="4" fill="#b44a2d"/><rect x="12" y="20" width="4" height="4" fill="#2a6b5e"/></svg>
 ACBOS<span>.lab</span></a>
-<ul class="nav-links" id="navLinks"><li><a href="#about">About</a></li><li><a href="#research">Research</a></li><li><a href="#publications">Publications</a></li><li><a href="#teaching">Teaching</a></li><li><a href="#lab">Virtual Lab</a></li><li><a href="https://amsaghiri.github.io/open-quantum-computing-lab/">Quantum Lab</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul class="nav-links" id="navLinks"><li><a href="#about">About</a></li><li><a href="#research">Research</a></li><li><a href="#publications">Publications</a></li><li><a href="#teaching">Teaching</a></li><li><a href="#lab">Virtual Lab</a></li><li><a href="https://amsaghiri.github.io/open-quantum-computing-lab/">Quantum Lab</a></li><li><a href="#contact">Contact</a></li><li><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme" title="Light / dark"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg></button></li></ul>
 <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </div></nav>
 
@@ -398,6 +407,18 @@ function showTab(tabId){document.querySelectorAll('.pub-tab').forEach(t=>t.class
 const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');});});
+</script>
+<script>
+(function(){
+  var b=document.getElementById("themeToggle"); if(!b) return;
+  b.addEventListener("click",function(){
+    var r=document.documentElement, cur=r.getAttribute("data-theme");
+    if(!cur) cur=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+    var next=cur==="dark"?"light":"dark";
+    r.setAttribute("data-theme",next);
+    try{localStorage.setItem("theme",next)}catch(e){}
+  });
+})();
 </script>
 </body>
 </html>
